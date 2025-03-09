@@ -18,10 +18,10 @@ import {
   Linkedin,
 } from "lucide-react";
 import Header from "@/components/ui/header";
-import photo12 from "@/public/image/photo12.png"
-import photo9 from "@/public/image/photo9.png"
-import photo10 from "@/public/image/photo10.png"
-import photo11 from "@/public/image/photo11.png"
+import photo12 from "@/public/image/photo12.png";
+import photo9 from "@/public/image/photo9.png";
+import photo10 from "@/public/image/photo10.png";
+import photo11 from "@/public/image/photo11.png";
 
 export default function House() {
   return (
@@ -86,9 +86,11 @@ export default function House() {
               </div>
             </CardContent>
             <CardFooter className="bg-gray-50 px-6 py-4">
-              <Button className="w-full bg-blue-600 hover:bg-blue-700">
-                View Short Term Options
-              </Button>
+              <Link href={"/shortterme"}>
+                <Button className="w-full bg-blue-600 hover:bg-blue-700">
+                  View Short Term Options
+                </Button>
+              </Link>
             </CardFooter>
           </Card>
 
@@ -125,9 +127,11 @@ export default function House() {
               </div>
             </CardContent>
             <CardFooter className="bg-gray-50 px-6 py-4">
-              <Button className="w-full bg-blue-600 hover:bg-blue-700">
-                View Long Term Options
-              </Button>
+              <Link href={"/longterme"}>
+                <Button className="w-full bg-blue-600 hover:bg-blue-700">
+                  View Long Term Options
+                </Button>
+              </Link>
             </CardFooter>
           </Card>
         </div>
