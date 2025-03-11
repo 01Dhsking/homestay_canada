@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
+import Footer from "@/components/ui/footer";
+import Header from "@/components/ui/header";
+import Head from "next/head";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -27,7 +29,16 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <Head>
+          <title>HomeStay CA - Trouvez votre maison parfaite au Canada</title>
+          <meta name="description" content="Location de propriétés au Canada" />
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <div className="flex flex-col min-h-screen px-[50px]">
+          <Header></Header>
+          {children}
+          <Footer></Footer>
+        </div>
       </body>
     </html>
   );

@@ -9,8 +9,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Badge } from "@/components/ui/badge";
-import Head from "next/head";
 import Image from "next/image";
 import {
   Search,
@@ -21,111 +19,153 @@ import {
   Home as HomeIcon,
   CreditCard,
   MapPin,
-  Facebook,
-  Twitter,
-  Instagram,
-  Linkedin,
 } from "lucide-react";
-import Header from "@/components/ui/header";
+import CardHouse from "@/components/ui/cardhouse";
 import photo15 from "@/public/image/photo15.png";
 import photo3 from "@/public/image/photo3.png";
 import photo10 from "@/public/image/photo10.png";
 import photo13 from "@/public/image/photo13.png";
 
+const houseInfo = [
+  {
+    image: photo3,
+    type: "Populaire",
+    price: "$150/night",
+    name: "Downtown Luxury Suite",
+    available: true,
+    houseName: "Downtown Luxury Suite",
+    location: "Vancouver, Canada",
+    bed: 2,
+    bath: 2,
+    size: "980 sq.ft",
+    commentary: "",
+  },
+  {
+    image: photo10,
+    type: "Populaire",
+    price: "$2,200/month",
+    name: "Harbor View Apartment",
+    available: true,
+    houseName: "Downtown Luxury Suite",
+    location: "Toronto, Canada",
+    bed: 2,
+    bath: 2,
+    size: "1,200 sq.ft",
+    commentary: "",
+  },
+  {
+    image: photo13,
+    type: "Populaire",
+    price: "$200/night",
+    name: "Urban Garden Plus",
+    available: true,
+    houseName: "Downtown Luxury Suite",
+    location: "Montreal, Canada",
+    bed: 2,
+    bath: 2,
+    size: "650 sq.ft",
+    commentary: "",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
-      <Head>
-        <title>HomeStay CA - Trouvez votre maison parfaite au Canada</title>
-        <meta name="description" content="Location de propriétés au Canada" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      {/* Header/Navbar */}
-      <Header />
-
+    <div>
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-12 md:py-16">
-        <div className="grid md:grid-cols-2 gap-8 items-center">
+      <section className="container mx-auto px-4 py-8 sm:py-12 md:py-16">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Find Your Perfect Home in Canada
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
+              Trouvez votre maison idéale au Canada
             </h2>
-            <p className="text-gray-600 mb-6">
-              Whether you&apos;re looking for a short-term stay or a long-term
-              residence, we have the perfect accommodation for you across
+            <p className="text-gray-600 mb-4 sm:mb-6">
+              Que vous recherchiez un séjour de courte durée ou une résidence à
+              long terme, nous avons l'hébergement idéal pour vous partout au
               Canada.
             </p>
 
-            <div className="flex space-x-3 mb-8">
-              <Button className="flex items-center space-x-2">
+            <div className="flex flex-col sm:flex-row gap-3 sm:space-x-3 mb-6 sm:mb-8">
+              <Button className="flex items-center justify-center space-x-2 w-full sm:w-auto mb-2 sm:mb-0">
                 <Calendar className="h-4 w-4" />
-                <span>Short Term Stays</span>
+                <span>Séjours de courte durée</span>
               </Button>
-              <Button variant="outline" className="flex items-center space-x-2">
+              <Button
+                variant="outline"
+                className="flex items-center justify-center space-x-2 w-full sm:w-auto"
+              >
                 <HomeIcon className="h-4 w-4" />
-                <span>Long Term Rentals</span>
+                <span>Locations longue durée</span>
               </Button>
             </div>
 
             <div className="flex flex-wrap gap-4 mb-8">
               <div className="flex items-center text-sm text-green-600">
                 <CheckCircle className="h-4 w-4 mr-1" />
-                <span>Verified Properties</span>
+                <span>Propriétés vérifiées</span>
               </div>
               <div className="flex items-center text-sm text-green-600">
                 <ShieldCheck className="h-4 w-4 mr-1" />
-                <span>Secure Booking</span>
+                <span>Réservation sécurisée</span>
               </div>
               <div className="flex items-center text-sm text-green-600">
                 <Clock className="h-4 w-4 mr-1" />
-                <span>24/7 Support</span>
+                <span>Assistance 24h/24 et 7j/7</span>
               </div>
             </div>
 
-            <Card className="mt-8">
+            <Card className="mt-6 sm:mt-8">
               <CardContent className="p-4">
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <div className="flex-1 flex items-center border rounded-md px-3 py-2">
-                    <Search className="text-gray-400 mr-2 h-5 w-5" />
-                    <Input
-                      className="border-0 focus-visible:ring-0 p-0 text-sm"
-                      placeholder="Location"
-                    />
+                <div className="flex flex-col gap-3 sm:gap-4">
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <div className="flex-1">
+                      <div className="flex items-center border rounded-md px-3 py-2 w-full">
+                        <Search className="text-gray-400 mr-2 h-5 w-5" />
+                        <Input
+                          className="border-0 focus-visible:ring-0 p-0 text-sm w-full"
+                          placeholder="Location"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="flex-1 sm:flex-initial">
+                      <div className="flex items-center border rounded-md px-3 py-2 w-full">
+                        <Calendar className="text-gray-400 mr-2 h-5 w-5" />
+                        <Input
+                          className="border-0 focus-visible:ring-0 p-0 text-sm w-full"
+                          placeholder="mm/dd/yyyy"
+                        />
+                      </div>
+                    </div>
                   </div>
 
-                  <div className="flex items-center border rounded-md px-3 py-2">
-                    <Calendar className="text-gray-400 mr-2 h-5 w-5" />
-                    <Input
-                      className="border-0 focus-visible:ring-0 p-0 text-sm w-28"
-                      placeholder="mm/dd/yyyy"
-                    />
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <Select>
+                      <SelectTrigger className="w-full sm:w-32">
+                        <SelectValue placeholder="Any Type" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="apartment">Appartement</SelectItem>
+                        <SelectItem value="house">Maison</SelectItem>
+                        <SelectItem value="condo">Copropriété</SelectItem>
+                        <SelectItem value="villa">Villa</SelectItem>
+                      </SelectContent>
+                    </Select>
+
+                    <Button className="flex items-center justify-center w-full sm:w-auto">
+                      <Search className="mr-2 h-4 w-4" />
+                      <span className="hidden sm:inline">
+                        Rechercher des propriétés
+                      </span>
+                      <span className="sm:hidden">Rechercher</span>
+                    </Button>
                   </div>
-
-                  <Select>
-                    <SelectTrigger className="w-32">
-                      <SelectValue placeholder="Any Type" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="apartment">Apartment</SelectItem>
-                      <SelectItem value="house">House</SelectItem>
-                      <SelectItem value="condo">Condo</SelectItem>
-                      <SelectItem value="villa">Villa</SelectItem>
-                    </SelectContent>
-                  </Select>
-
-                  <Button className="flex items-center">
-                    <Search className="mr-2 h-4 w-4" />
-                    Search Properties
-                  </Button>
                 </div>
               </CardContent>
             </Card>
           </div>
 
-          <div className="relative">
-            <div className="relative rounded-lg overflow-hidden h-72 md:h-96">
+          <div className="relative mt-6 sm:mt-0">
+            <div className="relative rounded-lg overflow-hidden h-48 sm:h-64 md:h-96">
               <Image
                 src={photo15}
                 alt="Modern apartment interior"
@@ -136,7 +176,7 @@ export default function Home() {
               />
               <div className="absolute bottom-4 right-4 bg-white rounded-lg p-2 text-xs flex items-center">
                 <span className="font-bold mr-1">4.9/5</span>
-                <span className="text-gray-500">(User Reviews)</span>
+                <span className="text-gray-500">(Avis des utilisateurs)</span>
               </div>
             </div>
           </div>
@@ -144,176 +184,48 @@ export default function Home() {
       </section>
 
       {/* Featured Properties Section */}
-      <section className="bg-gray-50 py-12">
+      <section className="py-8 sm:py-12 bg-[#bc9273] rounded-2xl">
         <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold mb-2 text-center">
-            Featured Properties
+          <h2 className="text-2xl font-bold text-[50px] mb-2 text-center ">
+            Propriétés vedette
           </h2>
-          <p className="text-center text-gray-600 mb-8">
-            Discover our hand-picked selection of premium properties
+          <p className="text-center text-white mb-8 text-[15px]"> 
+            Découvrez notre sélection de propriétés premium triées sur le volet
           </p>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {/* Property Card 1 */}
-            <Card>
-              <div className="relative h-48">
-                <Image
-                  src={photo3}
-                  alt="Luxury Downtown Suite"
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-t-lg"
-                />
-                <Badge className="absolute top-3 left-3 bg-blue-600">
-                  Popular
-                </Badge>
-              </div>
-              <CardContent className="p-4">
-                <h3 className="font-bold text-lg">Luxury Downtown Suite</h3>
-                <p className="text-gray-500 text-sm mb-2">Toronto, Ontario</p>
-
-                <div className="flex justify-between mb-4 text-sm text-gray-600">
-                  <div className="flex items-center">
-                    <HomeIcon className="h-4 w-4 mr-1" />
-                    <span>2 Beds</span>
-                  </div>
-                  <div className="flex items-center">
-                    <HomeIcon className="h-4 w-4 mr-1" />
-                    <span>2 Bath</span>
-                  </div>
-                  <div className="flex items-center">
-                    <HomeIcon className="h-4 w-4 mr-1" />
-                    <span>1,050 sq.ft</span>
-                  </div>
-                </div>
-
-                <div className="flex justify-between items-center">
-                  <div>
-                    <p className="font-bold text-lg text-blue-600">
-                      $175/night
-                    </p>
-                  </div>
-                  <Button variant="outline" size="sm">
-                    View Details
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Property Card 2 */}
-            <Card>
-              <div className="relative h-48">
-                <Image
-                  src={photo13}
-                  alt="Mountain View Residence"
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-t-lg"
-                />
-                <Badge className="absolute top-3 left-3 bg-green-600">
-                  New
-                </Badge>
-              </div>
-              <CardContent className="p-4">
-                <h3 className="font-bold text-lg">Mountain View Residence</h3>
-                <p className="text-gray-500 text-sm mb-2">Vancouver, BC</p>
-
-                <div className="flex justify-between mb-4 text-sm text-gray-600">
-                  <div className="flex items-center">
-                    <HomeIcon className="h-4 w-4 mr-1" />
-                    <span>3 Beds</span>
-                  </div>
-                  <div className="flex items-center">
-                    <HomeIcon className="h-4 w-4 mr-1" />
-                    <span>2 Bath</span>
-                  </div>
-                  <div className="flex items-center">
-                    <HomeIcon className="h-4 w-4 mr-1" />
-                    <span>1,200 sq.ft</span>
-                  </div>
-                </div>
-
-                <div className="flex justify-between items-center">
-                  <div>
-                    <p className="font-bold text-lg text-blue-600">
-                      $2,400/month
-                    </p>
-                  </div>
-                  <Button variant="outline" size="sm">
-                    View Details
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Property Card 3 */}
-            <Card>
-              <div className="relative h-48">
-                <Image
-                  src={photo10}
-                  alt="Urban Studio Plus"
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-t-lg"
-                />
-                <Badge className="absolute top-3 left-3 bg-purple-600">
-                  Best Value
-                </Badge>
-              </div>
-              <CardContent className="p-4">
-                <h3 className="font-bold text-lg">Urban Studio Plus</h3>
-                <p className="text-gray-500 text-sm mb-2">Montreal, QC</p>
-
-                <div className="flex justify-between mb-4 text-sm text-gray-600">
-                  <div className="flex items-center">
-                    <HomeIcon className="h-4 w-4 mr-1" />
-                    <span>1 Bed</span>
-                  </div>
-                  <div className="flex items-center">
-                    <HomeIcon className="h-4 w-4 mr-1" />
-                    <span>1 Bath</span>
-                  </div>
-                  <div className="flex items-center">
-                    <HomeIcon className="h-4 w-4 mr-1" />
-                    <span>600 sq.ft</span>
-                  </div>
-                </div>
-
-                <div className="flex justify-between items-center">
-                  <div>
-                    <p className="font-bold text-lg text-blue-600">
-                      $140/night
-                    </p>
-                  </div>
-                  <Button variant="outline" size="sm">
-                    View Details
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+            {houseInfo.map((house, index) => {
+              return <CardHouse key={index} dataImage={house} className="border-none" />;
+            })}
           </div>
+          <Link href={"/type"} className="w-full flex justify-center">
+            <Button className="mt-[50px] w-[100px] lg:w-[500px] md:w-[300px]"size={"lg"} variant={"secondary"}>
+              En voir plus
+            </Button>
+          </Link>
         </div>
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-12">
+      <section className="py-8 sm:py-12">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl font-bold mb-2 text-center">
-            Why Choose HomeStayCA
+            Pourquoi choisir HomeStayCA
           </h2>
           <p className="text-center text-gray-600 mb-12">
-            We make finding your next home simple and secure
+            Nous rendons la recherche de votre prochaine maison simple et
+            sécurisée
           </p>
 
-          <div className="grid md:grid-cols-4 gap-8 text-center">
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
             <div className="flex flex-col items-center">
               <div className="bg-blue-100 p-4 rounded-full mb-4">
                 <CheckCircle className="h-6 w-6 text-blue-600" />
               </div>
-              <h3 className="font-bold mb-2">Verified Properties</h3>
+              <h3 className="font-bold mb-2">Propriétés vérifiées</h3>
               <p className="text-gray-600 text-sm">
-                All our listings are thoroughly verified to ensure quality and
-                accuracy
+                Toutes nos annonces sont soigneusement vérifiées pour garantir
+                leur qualité et leur exactitude.
               </p>
             </div>
 
@@ -323,7 +235,8 @@ export default function Home() {
               </div>
               <h3 className="font-bold mb-2">24/7 Support</h3>
               <p className="text-gray-600 text-sm">
-                Our responsive support team is available around the clock
+                Notre équipe d'assistance réactive est disponible 24 heures sur
+                24
               </p>
             </div>
 
@@ -331,9 +244,9 @@ export default function Home() {
               <div className="bg-blue-100 p-4 rounded-full mb-4">
                 <CreditCard className="h-6 w-6 text-blue-600" />
               </div>
-              <h3 className="font-bold mb-2">Secure Payments</h3>
+              <h3 className="font-bold mb-2">Paiements sécurisés</h3>
               <p className="text-gray-600 text-sm">
-                Your transactions are protected with industry-leading security
+                Vos transactions sont protégées par une sécurité de pointe
               </p>
             </div>
 
@@ -341,132 +254,16 @@ export default function Home() {
               <div className="bg-blue-100 p-4 rounded-full mb-4">
                 <MapPin className="h-6 w-6 text-blue-600" />
               </div>
-              <h3 className="font-bold mb-2">Prime Locations</h3>
+              <h3 className="font-bold mb-2">Emplacements privilégiés</h3>
               <p className="text-gray-600 text-sm">
-                Access to the best properties in premium locations
+                Accès aux meilleures propriétés dans des emplacements premium
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white pt-12 pb-6">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
-            <div>
-              <h3 className="text-xl font-bold mb-4">HomeStayCA</h3>
-              <p className="text-gray-400 text-sm mb-4">
-                Find trusted homestays and perfect homes in Canada.
-              </p>
-            </div>
 
-            <div>
-              <h4 className="font-bold mb-4">Quick Links</h4>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    href="#"
-                    className="text-gray-400 hover:text-white text-sm"
-                  >
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-gray-400 hover:text-white text-sm"
-                  >
-                    Long Term Rentals
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-gray-400 hover:text-white text-sm"
-                  >
-                    Short Term Stays
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-gray-400 hover:text-white text-sm"
-                  >
-                    About Us
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-bold mb-4">Popular Cities</h4>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    href="#"
-                    className="text-gray-400 hover:text-white text-sm"
-                  >
-                    Toronto
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-gray-400 hover:text-white text-sm"
-                  >
-                    Vancouver
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-gray-400 hover:text-white text-sm"
-                  >
-                    Montreal
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-gray-400 hover:text-white text-sm"
-                  >
-                    Calgary
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-800 pt-6">
-            <div className="flex flex-col md:flex-row justify-between items-center">
-              <div className="mb-4 md:mb-0">
-                <h4 className="font-bold mb-2">Connect With Us</h4>
-                <div className="flex space-x-4">
-                  <Link href="#" className="text-gray-400 hover:text-white">
-                    <Facebook className="h-5 w-5" />
-                  </Link>
-                  <Link href="#" className="text-gray-400 hover:text-white">
-                    <Twitter className="h-5 w-5" />
-                  </Link>
-                  <Link href="#" className="text-gray-400 hover:text-white">
-                    <Instagram className="h-5 w-5" />
-                  </Link>
-                  <Link href="#" className="text-gray-400 hover:text-white">
-                    <Linkedin className="h-5 w-5" />
-                  </Link>
-                </div>
-              </div>
-
-              <div className="flex items-center">
-                <p className="text-gray-400 text-sm">
-                  © 2025 HomeStayCA. All rights reserved.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

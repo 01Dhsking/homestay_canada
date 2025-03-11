@@ -1,7 +1,6 @@
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
 import Head from "next/head";
 import Image from "next/image";
@@ -10,14 +9,8 @@ import {
   Clock,
   ShieldCheck,
   Map,
-  Phone,
-  Mail,
-  Facebook,
-  Twitter,
-  Instagram,
-  Linkedin,
 } from "lucide-react";
-import Header from "@/components/ui/header";
+
 import photo12 from "@/public/image/photo12.png";
 import photo9 from "@/public/image/photo9.png";
 import photo10 from "@/public/image/photo10.png";
@@ -25,15 +18,7 @@ import photo11 from "@/public/image/photo11.png";
 
 export default function House() {
   return (
-    <div className="flex flex-col min-h-screen">
-      <Head>
-        <title>StayCanada - Your Perfect Accommodation in Canada</title>
-        <meta name="description" content="Find your perfect stay in Canada" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      {/* Header/Navbar */}
-      <Header />
+    <div>
 
       {/* Hero Banner */}
       <section className="relative h-72 md:h-96">
@@ -47,7 +32,7 @@ export default function House() {
       </section>
 
       {/* Stay Type Section */}
-      <section className="container mx-auto px-4 py-12">
+      <section className="container mx-auto px-4 py-12 ">
         <h2 className="text-2xl font-bold mb-8 text-center">
           Choose Your Stay Type
         </h2>
@@ -55,7 +40,7 @@ export default function House() {
         <div className="grid md:grid-cols-2 gap-6">
           {/* Short Term Stay Card */}
           <Card className="overflow-hidden">
-            <div className="relative h-48">
+            <div className="relative lg:h-[300px] h-[200px]">
               <Image
                 src={photo9}
                 alt="Luxury apartment interior"
@@ -63,7 +48,7 @@ export default function House() {
                 objectFit="cover"
               />
             </div>
-            <CardContent className="p-6">
+            <CardContent className="px-6">
               <h3 className="font-bold text-lg mb-2">Short Term Stay</h3>
               <p className="text-gray-600 text-sm mb-4">
                 Perfect for travelers looking for comfortable, well-located
@@ -85,7 +70,7 @@ export default function House() {
                 </div>
               </div>
             </CardContent>
-            <CardFooter className="bg-gray-50 px-6 py-4">
+            <CardFooter className="bg-gray-50 px-6">
               <Link href={"/shortterme"}>
                 <Button className="w-full bg-blue-600 hover:bg-blue-700">
                   View Short Term Options
@@ -96,7 +81,7 @@ export default function House() {
 
           {/* Long Term Stay Card */}
           <Card className="overflow-hidden">
-            <div className="relative h-48">
+            <div className="relative lg:h-[300px] h-[200px]">
               <Image
                 src={photo10}
                 alt="Modern apartment interior"
@@ -104,7 +89,7 @@ export default function House() {
                 objectFit="cover"
               />
             </div>
-            <CardContent className="p-6">
+            <CardContent className="px-6">
               <h3 className="font-bold text-lg mb-2">Long Term Stay</h3>
               <p className="text-gray-600 text-sm mb-4">
                 Ideal for extended stays, relocation, or working remotely.
@@ -126,7 +111,7 @@ export default function House() {
                 </div>
               </div>
             </CardContent>
-            <CardFooter className="bg-gray-50 px-6 py-4">
+            <CardFooter className="bg-gray-50 px-6">
               <Link href={"/longterme"}>
                 <Button className="w-full bg-blue-600 hover:bg-blue-700">
                   View Long Term Options
@@ -138,7 +123,7 @@ export default function House() {
       </section>
 
       {/* Featured Properties */}
-      <section className="container mx-auto px-4 py-12">
+      <section className="container mx-auto px-4 py-12 hidden">
         <h2 className="text-2xl font-bold mb-8 text-center">
           Featured Properties
         </h2>
@@ -238,7 +223,7 @@ export default function House() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="container mx-auto px-4 py-12">
+      <section className="container mx-auto px-4 py-12 hidden">
         <h2 className="text-2xl font-bold mb-8 text-center">
           Why Choose StayCanada
         </h2>
@@ -287,7 +272,7 @@ export default function House() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-blue-600 py-12 text-white">
+      <section className="bg-blue-600 py-12 text-white hidden">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-2xl font-bold mb-4">
             Ready to Find Your Perfect Stay?
@@ -313,95 +298,6 @@ export default function House() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white">
-        <div className="container mx-auto px-4 py-8">
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
-            <div>
-              <h3 className="text-lg font-bold mb-4">StayCanada</h3>
-              <p className="text-gray-400 text-sm mb-4">
-                The premier platform for finding quality short and long-term
-                stays in Canada.
-              </p>
-            </div>
-
-            <div>
-              <h4 className="font-bold mb-4">Quick Links</h4>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    href="#"
-                    className="text-gray-400 hover:text-white text-sm"
-                  >
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-gray-400 hover:text-white text-sm"
-                  >
-                    Short Term Rentals
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-gray-400 hover:text-white text-sm"
-                  >
-                    Long Term Rentals
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-gray-400 hover:text-white text-sm"
-                  >
-                    Privacy Policy
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-bold mb-4">Contact Us</h4>
-              <ul className="space-y-2">
-                <li className="flex items-center text-gray-400 text-sm">
-                  <Phone className="h-4 w-4 mr-2" />
-                  <span>+1 (800) 123-4567</span>
-                </li>
-                <li className="flex items-center text-gray-400 text-sm">
-                  <Mail className="h-4 w-4 mr-2" />
-                  <span>info@staycanada.com</span>
-                </li>
-              </ul>
-
-              <h4 className="font-bold mt-6 mb-2">Follow Us</h4>
-              <div className="flex space-x-4">
-                <Link href="#" className="text-gray-400 hover:text-white">
-                  <Facebook className="h-5 w-5" />
-                </Link>
-                <Link href="#" className="text-gray-400 hover:text-white">
-                  <Twitter className="h-5 w-5" />
-                </Link>
-                <Link href="#" className="text-gray-400 hover:text-white">
-                  <Instagram className="h-5 w-5" />
-                </Link>
-                <Link href="#" className="text-gray-400 hover:text-white">
-                  <Linkedin className="h-5 w-5" />
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          <Separator className="bg-gray-800" />
-
-          <div className="pt-6 text-center text-gray-400 text-sm">
-            <p>© 2023 StayCanada Inc. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
