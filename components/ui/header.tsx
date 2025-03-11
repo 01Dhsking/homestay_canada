@@ -1,9 +1,11 @@
 "use client";
 
 import React from "react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
 import { Button } from "./button";
 import { Menu } from "lucide-react";
+import { Card } from "./card";
 import {
   Sheet,
   SheetContent,
@@ -19,6 +21,8 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { usePathname } from "next/navigation";
+
+const connecter = true;
 
 function Header() {
   const pathname = usePathname();
@@ -94,10 +98,21 @@ function Header() {
 
         {/* Desktop Buttons */}
         <div className="hidden md:flex space-x-3">
-          <Button variant="outline" size="sm">
-            Se connecter
-          </Button>
-          <Button size="sm">Essayez Premium</Button>
+          {connecter ? (
+            <Link href={"/profile"}>
+              <div className="flex flex-row items-center space-x-2 py-2 px-5 border border-gray-300 rounded-2xl">
+                <Avatar>
+                  <AvatarImage src="https://github.com/shadcn.png" />
+                  <AvatarFallback>CN</AvatarFallback>
+                </Avatar>
+                <p>Profile</p>
+              </div>
+            </Link>
+          ) : (
+            <Button variant="outline" size="sm">
+              Se connecter
+            </Button>
+          )}
         </div>
 
         {/* Mobile Menu */}
