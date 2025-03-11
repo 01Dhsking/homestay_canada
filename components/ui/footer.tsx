@@ -4,11 +4,11 @@ function Footer() {
   return (
     <footer className="bg-gray-900 text-white py-12">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-3">
           <div>
             <h3 className="font-bold text-lg mb-4">StayHub</h3>
             <p className="text-gray-400 text-sm">
-              Find your perfect temporary home in Canada.
+            Trouvez votre logement temporaire idéal au Canada.
             </p>
           </div>
 
@@ -17,22 +17,22 @@ function Footer() {
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
                 <Link href="/" className="hover:text-white">
-                  Home
+                  Accueil
                 </Link>
               </li>
               <li>
-                <Link href="/short-term-rentals" className="hover:text-white">
-                  Short Term Rentals
+                <Link href="/shortterme" className="hover:text-white">
+                  Maison Court terme
                 </Link>
               </li>
               <li>
-                <Link href="/long-term-rentals" className="hover:text-white">
-                  Long Term Rentals
+                <Link href="/longterme" className="hover:text-white">
+                  Maison Long terme
                 </Link>
               </li>
               <li>
-                <Link href="/about-us" className="hover:text-white">
-                  About Us
+                <Link href="/about" className="hover:text-white">
+                  A propos de nous
                 </Link>
               </li>
               <li>
@@ -44,38 +44,7 @@ function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Popular Cities</h4>
-            <ul className="space-y-2 text-sm text-gray-400">
-              <li>
-                <Link href="/toronto" className="hover:text-white">
-                  Toronto
-                </Link>
-              </li>
-              <li>
-                <Link href="/vancouver" className="hover:text-white">
-                  Vancouver
-                </Link>
-              </li>
-              <li>
-                <Link href="/montreal" className="hover:text-white">
-                  Montreal
-                </Link>
-              </li>
-              <li>
-                <Link href="/calgary" className="hover:text-white">
-                  Calgary
-                </Link>
-              </li>
-              <li>
-                <Link href="/ottawa" className="hover:text-white">
-                  Ottawa
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-semibold mb-4">Contact Us</h4>
+            <h4 className="font-semibold mb-4">Contactez nous</h4>
             <ul className="space-y-2 text-sm text-gray-400">
               <li className="flex items-center">
                 <svg

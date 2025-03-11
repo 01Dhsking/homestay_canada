@@ -111,17 +111,45 @@ function Header() {
             <SheetHeader>
               <SheetTitle>Menu</SheetTitle>
             </SheetHeader>
-            <div className="flex flex-col space-y-4 mt-6">
-              <Link href="/" className="text-sm hover:text-blue-600">
+            <div className="flex flex-col space-y-4 mt-6 text-center">
+              <Link
+                href="/"
+                className={`${
+                  pathname === "/"
+                    ? "p-2 bg-blue-600 rounded-2xl text-white"
+                    : "text-gray-600"
+                } text-sm `}
+              >
                 Accueil
               </Link>
-              <Link href="/type" className="text-sm hover:text-blue-600">
+              <Link
+                href="/type"
+                className={`${
+                  pathname === "/type"
+                    ? "p-2 bg-blue-600 rounded-2xl text-white"
+                    : "text-gray-600"
+                } text-sm `}
+              >
                 Nos maisons
               </Link>
-              <Link href="/about" className="text-sm hover:text-blue-600">
+              <Link
+                href="/about"
+                className={`${
+                  pathname === "/about"
+                    ? "p-2 bg-blue-600 rounded-2xl text-white"
+                    : "text-gray-600"
+                } text-sm `}
+              >
                 À propos de nous
               </Link>
-              <Link href="/contact" className="text-sm hover:text-blue-600">
+              <Link
+                href="/contact"
+                className={`${
+                  pathname === "/contact"
+                    ? "p-2 bg-blue-600 rounded-2xl text-white"
+                    : "text-gray-600"
+                } text-sm `}
+              >
                 Contact
               </Link>
               <div className="flex flex-col space-y-2 pt-4 border-t">

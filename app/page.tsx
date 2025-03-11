@@ -80,7 +80,7 @@ export default function Home() {
             </h2>
             <p className="text-gray-600 mb-4 sm:mb-6">
               Que vous recherchiez un séjour de courte durée ou une résidence à
-              long terme, nous avons l'hébergement idéal pour vous partout au
+              long terme, nous avons l&apos;hébergement idéal pour vous partout au
               Canada.
             </p>
 
@@ -235,7 +235,7 @@ export default function Home() {
               </div>
               <h3 className="font-bold mb-2">24/7 Support</h3>
               <p className="text-gray-600 text-sm">
-                Notre équipe d'assistance réactive est disponible 24 heures sur
+                Notre équipe d&apos;assistance réactive est disponible 24 heures sur
                 24
               </p>
             </div>

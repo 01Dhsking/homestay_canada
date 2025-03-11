@@ -11,9 +11,6 @@ import {
   CheckCircle,
   Clock,
   Heart,
-  Bed,
-  Bath,
-  Maximize,
   MapPin,
 } from "lucide-react";
 import photo15 from "@/public/image/photo15.png";
@@ -193,17 +190,17 @@ export default function Longterme() {
           {/* Left Column - Text & Search */}
           <div>
             <h2 className="text-3xl font-bold mb-3">
-              Find Your Perfect Home in Canada
+              Trouvez votre maison idéale au Canada
             </h2>
             <p className="text-gray-600 mb-8">
-              Whether you&apos;re looking for a short-term stay or a long-term
-              residence, we have the perfect accommodation for you across
+              Que vous recherchiez un séjour de courte durée ou une résidence à
+              long terme, nous avons l&apos;hébergement idéal pour vous partout au
               Canada.
             </p>
 
             <div className="flex space-x-3 mb-6">
               <Link href="/shortterme">
-                <Button variant={"outline"}>Short Term</Button>
+                <Button variant="outline">Court terme</Button>
               </Link>
               <Link href="/longterme">
                 <Button variant={"outline"} className="bg-blue-600 text-white">
@@ -226,7 +223,7 @@ export default function Longterme() {
 
                 <Button className="bg-blue-600 hover:bg-blue-700">
                   <Search className="h-4 w-4 mr-2" />
-                  Search
+                  Recherche
                 </Button>
               </div>
             </div>
@@ -248,7 +245,7 @@ export default function Longterme() {
 
       {/* Popular Cities */}
       <section className="container mx-auto px-4 py-12">
-        <h2 className="text-2xl font-bold mb-8">Popular Cities</h2>
+        <h2 className="text-2xl font-bold mb-8">Villes populaires</h2>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {/* City 1 */}
@@ -263,7 +260,7 @@ export default function Longterme() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             <div className="absolute bottom-0 left-0 p-4 text-white">
               <h3 className="font-bold">Toronto</h3>
-              <p className="text-sm">124 Properties</p>
+              <p className="text-sm">124 Propriétés</p>
             </div>
           </div>
 
@@ -279,7 +276,7 @@ export default function Longterme() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             <div className="absolute bottom-0 left-0 p-4 text-white">
               <h3 className="font-bold">Vancouver</h3>
-              <p className="text-sm">98 Properties</p>
+              <p className="text-sm">98 Propriétés</p>
             </div>
           </div>
 
@@ -295,7 +292,7 @@ export default function Longterme() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             <div className="absolute bottom-0 left-0 p-4 text-white">
               <h3 className="font-bold">Montreal</h3>
-              <p className="text-sm">87 Properties</p>
+              <p className="text-sm">87 Propriétés</p>
             </div>
           </div>
 
@@ -311,7 +308,7 @@ export default function Longterme() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             <div className="absolute bottom-0 left-0 p-4 text-white">
               <h3 className="font-bold">Calgary</h3>
-              <p className="text-sm">65 Properties</p>
+              <p className="text-sm">65 Propriétés</p>
             </div>
           </div>
         </div>
@@ -331,7 +328,7 @@ export default function Longterme() {
       {/* Why Choose Us Section */}
       <section className="container mx-auto px-4 py-12">
         <h2 className="text-2xl font-bold mb-8 text-center">
-          Why Choose StayHub
+          Pourquoi choisir StayHub
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -341,8 +338,8 @@ export default function Longterme() {
             </div>
             <h3 className="font-bold mb-2">Verified Properties</h3>
             <p className="text-gray-600 text-sm">
-              All our properties are thoroughly verified for your peace of mind
-              and safety.
+              Toutes nos propriétés sont soigneusement vérifiées pour votre
+              tranquillité d&apos;esprit et votre sécurité.
             </p>
           </div>
 
@@ -352,8 +349,8 @@ export default function Longterme() {
             </div>
             <h3 className="font-bold mb-2">24/7 Support</h3>
             <p className="text-gray-600 text-sm">
-              Our support team is available around the clock to assist with any
-              questions.
+              Notre équipe d&apos;assistance est disponible 24 heures sur 24 pour
+              répondre à toutes vos questions.
             </p>
           </div>
 
@@ -363,8 +360,8 @@ export default function Longterme() {
             </div>
             <h3 className="font-bold mb-2">Best Prices</h3>
             <p className="text-gray-600 text-sm">
-              We offer competitive rates and regular promotions for the best
-              deals.
+              Nous proposons des tarifs compétitifs et des promotions régulières
+              pour les meilleures offres.
             </p>
           </div>
         </div>
@@ -372,7 +369,7 @@ export default function Longterme() {
 
       {/* Testimonials */}
       <section className="container mx-auto px-4 py-12">
-        <h2 className="text-2xl font-bold mb-8">What Our Clients Say</h2>
+        <h2 className="text-2xl font-bold mb-8">Ce que disent nos clients</h2>
 
         <div className="grid md:grid-cols-3 gap-6">
           {/* Testimonial 1 */}
@@ -388,9 +385,9 @@ export default function Longterme() {
               </div>
             </div>
             <p className="text-gray-600 mb-4">
-              &quot;I love my stay! The apartment was exactly as pictured,
-              clean, and in a great location. The staff was super helpful
-              too!&quot;
+              « J&apos;ai adoré mon séjour ! L&apos;appartement était exactement comme sur
+              la photo, propre et très bien situé. Le personnel était super
+              serviable aussi ! »
             </p>
             <div className="flex text-yellow-400">
               <span>★★★★★</span>
@@ -410,8 +407,8 @@ export default function Longterme() {
               </div>
             </div>
             <p className="text-gray-600 mb-4">
-              &quot;Great selection of apartments. I was able to find the
-              perfect long-term rental for my business stay in Vancouver.&quot;
+              « Grand choix d&apos;appartements. J&apos;ai pu trouver la location à long
+              terme idéale pour mon séjour d&apos;affaires à Vancouver. »
             </p>
             <div className="flex text-yellow-400">
               <span>★★★★★</span>
@@ -434,9 +431,9 @@ export default function Longterme() {
               </div>
             </div>
             <p className="text-gray-600 mb-4">
-              &quot;The entire process from booking to check-out was seamless.
-              I&apos;ll definitely be using StayHub for future trips to
-              Canada!&quot;
+              « L&apos;ensemble du processus, de la réservation au départ, s&apos;est
+              déroulé sans problème.  J&apos;utiliserai certainement StayHub pour mes
+              prochains voyages au Canada ! »
             </p>
             <div className="flex text-yellow-400">
               <span>★★★★★</span>

@@ -9,10 +9,10 @@ function About() {
       {/* Hero Section */}
       <div className="bg-blue-600 text-white py-16">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl font-bold mb-4">About StayHub</h1>
+          <h1 className="text-4xl font-bold mb-4">À propos de StayHub</h1>
           <p className="text-xl max-w-2xl">
-            We&apos;re on a mission to make finding your perfect temporary home
-            in Canada easy, reliable, and enjoyable.
+            Notre mission est de rendre la recherche de votre logement
+            temporaire idéal au Canada facile, fiable et agréable.
           </p>
         </div>
       </div>
@@ -21,23 +21,24 @@ function About() {
       <div className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-6">Our Story</h2>
+            <h2 className="text-3xl font-bold mb-6">Notre histoire</h2>
             <div className="grid md:grid-cols-2 gap-12">
               <div>
                 <p className="text-gray-700 mb-4">
-                  Founded in 2018, StayHub began with a simple goal: to solve
-                  the challenges we faced when looking for quality
-                  accommodations in Canada.
+                  Fondée en 2018, StayHub a commencé avec un objectif simple :
+                  résoudre les défis auxquels nous étions confrontés lorsque
+                  nous recherchions un hébergement de qualité au Canada.
                 </p>
                 <p className="text-gray-700 mb-4">
-                  We understood that finding the perfect place to stay, whether
-                  for a week or several months, should be straightforward and
-                  stress-free.
+                  Nous avons compris que trouver l’endroit idéal où séjourner,
+                  que ce soit pour une semaine ou plusieurs mois, devrait être
+                  simple et sans stress.
                 </p>
                 <p className="text-gray-700">
-                  Today, we connect thousands of travelers with verified
-                  properties across major Canadian cities, ensuring that
-                  everyone finds their ideal temporary home.
+                  Aujourd&apos;hui, nous mettons en relation des milliers de
+                  voyageurs avec des propriétés vérifiées dans les principales
+                  villes canadiennes, garantissant ainsi que chacun trouve son
+                  logement temporaire idéal.
                 </p>
               </div>
               <div className="bg-gray-100 rounded-lg h-64 flex items-center justify-center">
@@ -57,7 +58,7 @@ function About() {
       {/* Our Values Section */}
       <div className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-12 text-center">Our Values</h2>
+          <h2 className="text-3xl font-bold mb-12 text-center">Nos valeurs</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <Card>
               <CardContent className="pt-6">
@@ -77,10 +78,13 @@ function About() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Trust & Safety</h3>
+                <h3 className="text-xl font-semibold mb-2">
+                  Confiance et sécurité
+                </h3>
                 <p className="text-gray-600">
-                  We verify every property and host on our platform to ensure
-                  your stay is safe and meets our high standards.
+                  Nous vérifions chaque propriété et chaque hôte sur notre
+                  plateforme pour garantir que votre séjour soit sûr et réponde
+                  à nos normes élevées.
                 </p>
               </CardContent>
             </Card>
@@ -103,10 +107,11 @@ function About() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Customer Support</h3>
+                <h3 className="text-xl font-semibold mb-2">Service client</h3>
                 <p className="text-gray-600">
-                  Our dedicated team is available 24/7 to assist you with any
-                  questions or issues during your booking or stay.
+                  Notre équipe dédiée est disponible 24h/24 et 7j/7 pour vous
+                  aider à répondre à toutes vos questions ou problèmes lors de
+                  votre réservation ou de votre séjour.
                 </p>
               </CardContent>
             </Card>
@@ -129,10 +134,11 @@ function About() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Local Expertise</h3>
+                <h3 className="text-xl font-semibold mb-2">Expertise locale</h3>
                 <p className="text-gray-600">
-                  We provide insider knowledge about neighborhoods and
-                  communities to help you find the perfect location.
+                  Nous fournissons des informations privilégiées sur les
+                  quartiers et les communautés pour vous aider à trouver
+                  l&apos;emplacement idéal.
                 </p>
               </CardContent>
             </Card>
@@ -144,15 +150,17 @@ function About() {
       <div className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-12 text-center">
-            Meet Our Team
+            Rencontrez notre équipe
           </h2>
           <div className="grid md:grid-cols-4 gap-8">
             {[1, 2, 3, 4].map((member) => (
               <div key={member} className="text-center">
                 <div className="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4"></div>
-                <h3 className="text-lg font-semibold">Team Member {member}</h3>
+                <h3 className="text-lg font-semibold">
+                  Membre de l&apos;équipe {member}
+                </h3>
                 <p className="text-gray-600">
-                  Co-Founder &{" "}
+                  Co-fondateur &{" "}
                   {member === 1
                     ? "CEO"
                     : member === 2
@@ -171,21 +179,21 @@ function About() {
       <div className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-12 text-center">
-            What Our Clients Say
+            Ce que disent nos clients
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
                 name: "Sarah Johnson",
-                text: "Found my perfect long-term apartment in Vancouver through StayHub. The process was smooth and the support team was incredible.",
+                text: "J'ai trouvé mon appartement idéal à long terme à Vancouver grâce à StayHub. Le processus s'est déroulé sans problème et l'équipe d'assistance a été incroyable.",
               },
               {
                 name: "Michael Chen",
-                text: "StayHub helped me find the perfect temporary home while I relocated to Toronto. I can't recommend them enough!",
+                text: "StayHub m'a aidé à trouver le logement temporaire idéal pendant mon déménagement à Toronto. Je ne peux que les recommander !",
               },
               {
                 name: "Jessica Thompson",
-                text: "As a frequent traveler to Canada for work, I rely on StayHub for all my accommodation needs. They never disappoint.",
+                text: "En tant que voyageur fréquent au Canada pour le travail, je compte sur StayHub pour tous mes besoins d'hébergement. Ils ne déçoivent jamais.",
               },
             ].map((testimonial, index) => (
               <Card key={index}>
@@ -218,25 +226,25 @@ function About() {
       </div>
 
       {/* CTA Section */}
-      <div className="bg-blue-600 text-white py-12">
+      <div className="bg-blue-600 text-white py-12 hidden">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-2xl font-bold mb-4">
-            Ready to Find Your Perfect Stay?
+            Prêt à trouver votre séjour idéal ?
           </h2>
           <p className="mb-6">
-            Join the thousands of satisfied customers who have found their ideal
-            temporary home with us.
+            Rejoignez les milliers de clients satisfaits qui ont trouvé chez
+            nous leur logement temporaire idéal.
           </p>
           <div className="flex justify-center space-x-4">
             <Button variant="secondary" size="lg">
-              Browse Properties
+              Parcourir les propriétés
             </Button>
             <Button
               variant="outline"
               className="bg-transparent border-white text-white hover:bg-white hover:text-blue-600"
               size="lg"
             >
-              Contact Us
+              Contactez-nous
             </Button>
           </div>
         </div>

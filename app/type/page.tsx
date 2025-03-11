@@ -2,7 +2,6 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import Head from "next/head";
 import Image from "next/image";
 import {
   CheckCircle,
@@ -34,7 +33,7 @@ export default function House() {
       {/* Stay Type Section */}
       <section className="container mx-auto px-4 py-12 ">
         <h2 className="text-2xl font-bold mb-8 text-center">
-          Choose Your Stay Type
+        Choisissez votre type de séjour
         </h2>
 
         <div className="grid md:grid-cols-2 gap-6">
@@ -49,31 +48,31 @@ export default function House() {
               />
             </div>
             <CardContent className="px-6">
-              <h3 className="font-bold text-lg mb-2">Short Term Stay</h3>
+              <h3 className="font-bold text-lg mb-2">Séjour de courte durée</h3>
               <p className="text-gray-600 text-sm mb-4">
-                Perfect for travelers looking for comfortable, well-located
-                accommodation for a few days to a few weeks.
+              Idéal pour les voyageurs à la recherche d&apos;un hébergement confortable et bien situé
+              pour quelques jours à quelques semaines.
               </p>
 
               <div className="space-y-2 mb-6">
                 <div className="flex items-center text-sm">
                   <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                  <span>Flexible payment options</span>
+                  <span>Options de paiement flexibles</span>
                 </div>
                 <div className="flex items-center text-sm">
                   <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                  <span>Daily housekeeping</span>
+                  <span>Ménage quotidien</span>
                 </div>
                 <div className="flex items-center text-sm">
                   <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                  <span>All utilities included</span>
+                  <span>Tous les services publics inclus</span>
                 </div>
               </div>
             </CardContent>
             <CardFooter className="bg-gray-50 px-6">
               <Link href={"/shortterme"}>
                 <Button className="w-full bg-blue-600 hover:bg-blue-700">
-                  View Short Term Options
+                Voir les options à court terme
                 </Button>
               </Link>
             </CardFooter>
@@ -90,31 +89,31 @@ export default function House() {
               />
             </div>
             <CardContent className="px-6">
-              <h3 className="font-bold text-lg mb-2">Long Term Stay</h3>
+              <h3 className="font-bold text-lg mb-2">Séjour longue durée</h3>
               <p className="text-gray-600 text-sm mb-4">
-                Ideal for extended stays, relocation, or working remotely.
-                Experience a home away from home.
+              Idéal pour les séjours prolongés, les déménagements ou le travail à distance.
+              Vivez une expérience comme à la maison.
               </p>
 
               <div className="space-y-2 mb-6">
                 <div className="flex items-center text-sm">
                   <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                  <span>Reduced monthly rates</span>
+                  <span>Tarifs mensuels réduits</span>
                 </div>
                 <div className="flex items-center text-sm">
                   <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                  <span>Flexible lease terms (3+ months)</span>
+                  <span>Conditions de location flexibles (3 mois et plus)</span>
                 </div>
                 <div className="flex items-center text-sm">
                   <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                  <span>Dedicated on-site support</span>
+                  <span>Assistance sur site dédiée</span>
                 </div>
               </div>
             </CardContent>
             <CardFooter className="bg-gray-50 px-6">
               <Link href={"/longterme"}>
                 <Button className="w-full bg-blue-600 hover:bg-blue-700">
-                  View Long Term Options
+                Voir les options à long terme
                 </Button>
               </Link>
             </CardFooter>

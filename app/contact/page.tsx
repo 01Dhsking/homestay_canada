@@ -36,8 +36,8 @@ function Contact() {
         <div className="container mx-auto px-4">
           <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
           <p className="text-xl max-w-2xl">
-            We&apos;re here to help with any questions you have about finding
-            your perfect stay in Canada.
+            Nous sommes là pour répondre à toutes vos questions concernant la
+            recherche de votre séjour idéal au Canada.
           </p>
         </div>
       </div>
@@ -251,7 +251,7 @@ function Contact() {
                         </div>
                         <div>
                           <h3 className="font-semibold text-lg">
-                            Office Location
+                            Emplacement du bureau
                           </h3>
                           <p className="text-gray-600">123 Business Avenue</p>
                           <p className="text-gray-600">Suite 400</p>
@@ -278,15 +278,15 @@ function Contact() {
                         </div>
                         <div>
                           <h3 className="font-semibold text-lg">
-                            Office Hours
+                            Heures de bureau
                           </h3>
                           <p className="text-gray-600">
-                            Monday - Friday: 9:00 AM - 6:00 PM
+                            Lundi - Vendredi : 9h00 - 18h00
                           </p>
                           <p className="text-gray-600">
-                            Saturday: 10:00 AM - 4:00 PM
+                            Samedi : 10h00 - 16h00
                           </p>
-                          <p className="text-gray-600">Sunday: Closed</p>
+                          <p className="text-gray-600">Dimanche : Fermé</p>
                         </div>
                       </div>
                     </div>
@@ -317,29 +317,29 @@ function Contact() {
       <div className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-8 text-center">
-            Frequently Asked Questions
+            Questions fréquemment posées
           </h2>
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {[
               {
-                question: "How do I book a property?",
+                question: "Comment réserver un bien ?",
                 answer:
-                  "Browse our listings, select your dates, and follow the booking process. You'll receive confirmation via email once your booking is confirmed.",
+                  "Parcourez nos annonces, sélectionnez vos dates et suivez le processus de réservation. Vous recevrez une confirmation par e-mail une fois votre réservation confirmée.",
               },
               {
-                question: "What is your cancellation policy?",
+                question: "Quelle est votre politique d'annulation ?",
                 answer:
-                  "Cancellation policies vary by property. Details can be found on each listing page before you complete your booking.",
+                  "Les conditions d'annulation varient selon les établissements. Vous trouverez les détails sur chaque page d'annonce avant de finaliser votre réservation.",
               },
               {
-                question: "Do you offer long-term rentals?",
+                question: "Proposez-vous des locations longue durée ?",
                 answer:
-                  "Yes, we offer both short-term and long-term rental options to accommodate different needs.",
+                  "Oui, nous proposons des options de location à court et à long terme pour répondre à différents besoins.",
               },
               {
-                question: "Are utilities included in the price?",
+                question: "Les services publics sont-ils inclus dans le prix ?",
                 answer:
-                  "This varies by property. All included amenities and utilities are clearly listed on the property details page.",
+                  "Cela varie selon la propriété. Toutes les commodités et services publics inclus sont clairement répertoriés sur la page des détails de la propriété.",
               },
             ].map((faq, index) => (
               <Card key={index}>
@@ -352,9 +352,10 @@ function Contact() {
           </div>
           <div className="text-center mt-8">
             <p className="text-gray-600 mb-4">
-              Still have questions? Contact our support team for assistance.
+              Vous avez encore des questions ? Contactez notre équipe
+              d&apos;assistance pour obtenir de l&apos;aide.
             </p>
-            <Button>View All FAQs</Button>
+            <Button>Afficher toutes les FAQ</Button>
           </div>
         </div>
       </div>
@@ -363,22 +364,22 @@ function Contact() {
       <div className="bg-blue-600 text-white py-12">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-2xl font-bold mb-4">
-            Ready to Find Your Perfect Stay?
+            Prêt à trouver votre séjour idéal ?
           </h2>
           <p className="mb-6">
-            Join the thousands of satisfied customers who have found their ideal
-            temporary home with us.
+            Rejoignez les milliers de clients satisfaits qui ont trouvé chez
+            nous leur logement temporaire idéal.
           </p>
           <div className="flex justify-center space-x-4">
             <Button variant="secondary" size="lg">
-              Browse Properties
+              Parcourir les propriétés
             </Button>
             <Button
               variant="outline"
               className="bg-transparent border-white text-white hover:bg-white hover:text-blue-600"
               size="lg"
             >
-              Contact Us
+              Contactez-nous
             </Button>
           </div>
         </div>
