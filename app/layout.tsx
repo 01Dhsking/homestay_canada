@@ -34,7 +34,7 @@ export default function RootLayout({
           <meta name="description" content="Location de propriétés au Canada" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <div className="flex flex-col min-h-screen px-[50px]">
+        <div className="flex flex-col min-h-screen">
           <Header></Header>
           {children}
           <Footer></Footer>
