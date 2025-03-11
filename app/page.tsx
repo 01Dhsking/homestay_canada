@@ -25,6 +25,7 @@ import photo15 from "@/public/image/photo15.png";
 import photo3 from "@/public/image/photo3.png";
 import photo10 from "@/public/image/photo10.png";
 import photo13 from "@/public/image/photo13.png";
+import iconemoji_eyeshealt from "@/public/icon/emoji_eyeshealt.svg";
 
 const houseInfo = [
   {
@@ -80,8 +81,8 @@ export default function Home() {
             </h2>
             <p className="text-gray-600 mb-4 sm:mb-6">
               Que vous recherchiez un séjour de courte durée ou une résidence à
-              long terme, nous avons l&apos;hébergement idéal pour vous partout au
-              Canada.
+              long terme, nous avons l&apos;hébergement idéal pour vous partout
+              au Canada.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:space-x-3 mb-6 sm:mb-8">
@@ -112,56 +113,17 @@ export default function Home() {
                 <span>Assistance 24h/24 et 7j/7</span>
               </div>
             </div>
-
-            <Card className="mt-6 sm:mt-8">
-              <CardContent className="p-4">
-                <div className="flex flex-col gap-3 sm:gap-4">
-                  <div className="flex flex-col sm:flex-row gap-3">
-                    <div className="flex-1">
-                      <div className="flex items-center border rounded-md px-3 py-2 w-full">
-                        <Search className="text-gray-400 mr-2 h-5 w-5" />
-                        <Input
-                          className="border-0 focus-visible:ring-0 p-0 text-sm w-full"
-                          placeholder="Location"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="flex-1 sm:flex-initial">
-                      <div className="flex items-center border rounded-md px-3 py-2 w-full">
-                        <Calendar className="text-gray-400 mr-2 h-5 w-5" />
-                        <Input
-                          className="border-0 focus-visible:ring-0 p-0 text-sm w-full"
-                          placeholder="mm/dd/yyyy"
-                        />
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col sm:flex-row gap-3">
-                    <Select>
-                      <SelectTrigger className="w-full sm:w-32">
-                        <SelectValue placeholder="Any Type" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="apartment">Appartement</SelectItem>
-                        <SelectItem value="house">Maison</SelectItem>
-                        <SelectItem value="condo">Copropriété</SelectItem>
-                        <SelectItem value="villa">Villa</SelectItem>
-                      </SelectContent>
-                    </Select>
-
-                    <Button className="flex items-center justify-center w-full sm:w-auto">
-                      <Search className="mr-2 h-4 w-4" />
-                      <span className="hidden sm:inline">
-                        Rechercher des propriétés
-                      </span>
-                      <span className="sm:hidden">Rechercher</span>
-                    </Button>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+            <Link href={"/type"}>
+              <Button size={"lg"} className="bg-blue-600 space-x-2">
+                <p>Découvrez votre prochaine maison </p>
+                <Image
+                  width={35}
+                  height={35}
+                  alt="iconemoji_eyeshealt"
+                  src={iconemoji_eyeshealt}
+                />
+              </Button>
+            </Link>
           </div>
 
           <div className="relative mt-6 sm:mt-0">
@@ -189,17 +151,27 @@ export default function Home() {
           <h2 className="text-2xl font-bold text-[50px] mb-2 text-center ">
             Propriétés vedette
           </h2>
-          <p className="text-center text-white mb-8 text-[15px]"> 
+          <p className="text-center text-white mb-8 text-[15px]">
             Découvrez notre sélection de propriétés premium triées sur le volet
           </p>
 
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
             {houseInfo.map((house, index) => {
-              return <CardHouse key={index} dataImage={house} className="border-none" />;
+              return (
+                <CardHouse
+                  key={index}
+                  dataImage={house}
+                  className="border-none"
+                />
+              );
             })}
           </div>
           <Link href={"/type"} className="w-full flex justify-center">
-            <Button className="mt-[50px] w-[100px] lg:w-[500px] md:w-[300px]"size={"lg"} variant={"secondary"}>
+            <Button
+              className="mt-[50px] w-[100px] lg:w-[500px] md:w-[300px]"
+              size={"lg"}
+              variant={"secondary"}
+            >
               En voir plus
             </Button>
           </Link>
@@ -235,8 +207,8 @@ export default function Home() {
               </div>
               <h3 className="font-bold mb-2">24/7 Support</h3>
               <p className="text-gray-600 text-sm">
-                Notre équipe d&apos;assistance réactive est disponible 24 heures sur
-                24
+                Notre équipe d&apos;assistance réactive est disponible 24 heures
+                sur 24
               </p>
             </div>
 
@@ -262,8 +234,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-
     </div>
   );
 }

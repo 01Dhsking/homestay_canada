@@ -281,7 +281,7 @@ function Contact() {
                             Heures de bureau
                           </h3>
                           <p className="text-gray-600">
-                            Lundi - Vendredi : 9h00 - 18h00
+                            Lundi - Vendredi : 9h00 - 16h00
                           </p>
                           <p className="text-gray-600">
                             Samedi : 10h00 - 16h00
@@ -289,21 +289,6 @@ function Contact() {
                           <p className="text-gray-600">Dimanche : Fermé</p>
                         </div>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                {/* Map Card */}
-                <Card>
-                  <CardContent className="p-0">
-                    <div className="h-64 bg-gray-200 flex items-center justify-center">
-                      <Image
-                        width={50}
-                        height={50}
-                        src="/api/placeholder/800/320"
-                        alt="Map location"
-                        className="w-full h-full object-cover"
-                      />
                     </div>
                   </CardContent>
                 </Card>
@@ -350,18 +335,11 @@ function Contact() {
               </Card>
             ))}
           </div>
-          <div className="text-center mt-8">
-            <p className="text-gray-600 mb-4">
-              Vous avez encore des questions ? Contactez notre équipe
-              d&apos;assistance pour obtenir de l&apos;aide.
-            </p>
-            <Button>Afficher toutes les FAQ</Button>
-          </div>
         </div>
       </div>
 
-      {/* CTA Section */}
-      <div className="bg-blue-600 text-white py-12">
+      {/* CTA Section
+      <div className="bg-blue-600 text-white py-12 hidden">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-2xl font-bold mb-4">
             Prêt à trouver votre séjour idéal ?
@@ -383,7 +361,7 @@ function Contact() {
             </Button>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

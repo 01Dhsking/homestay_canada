@@ -1,9 +1,16 @@
-import { Card } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import Link from "next/link";
 import Image from "next/image";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import {
   Calendar,
   Search,
@@ -194,8 +201,8 @@ export default function ShotTerme() {
             </h2>
             <p className="text-gray-600 mb-8">
               Que vous recherchiez un séjour de courte durée ou une résidence à
-              long terme, nous avons l&apos;hébergement idéal pour vous partout au
-              Canada.
+              long terme, nous avons l&apos;hébergement idéal pour vous partout
+              au Canada.
             </p>
 
             <div className="flex space-x-3 mb-6">
@@ -209,24 +216,55 @@ export default function ShotTerme() {
               </Link>
             </div>
 
-            <div className="bg-white p-3 rounded-lg border shadow-sm">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                <div className="relative flex items-center">
-                  <MapPin className="absolute left-3 text-gray-400 h-5 w-5" />
-                  <Input className="pl-10" placeholder="Location" />
-                </div>
+            <Card className="mt-6 sm:mt-8">
+              <CardContent className="p-4">
+                <div className="flex flex-col gap-3 sm:gap-4">
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <div className="flex-1">
+                      <div className="flex items-center border rounded-md px-3 py-2 w-full">
+                        <Search className="text-gray-400 mr-2 h-5 w-5" />
+                        <Input
+                          className="border-0 focus-visible:ring-0 p-0 text-sm w-full"
+                          placeholder="Location"
+                        />
+                      </div>
+                    </div>
 
-                <div className="relative flex items-center">
-                  <Calendar className="absolute left-3 text-gray-400 h-5 w-5" />
-                  <Input className="pl-10" placeholder="mm/dd/yyyy" />
-                </div>
+                    <div className="flex-1 sm:flex-initial">
+                      <div className="flex items-center border rounded-md px-3 py-2 w-full">
+                        <Calendar className="text-gray-400 mr-2 h-5 w-5" />
+                        <Input
+                          className="border-0 focus-visible:ring-0 p-0 text-sm w-full"
+                          placeholder="mm/dd/yyyy"
+                        />
+                      </div>
+                    </div>
+                  </div>
 
-                <Button className="bg-blue-600 hover:bg-blue-700">
-                  <Search className="h-4 w-4 mr-2" />
-                  Recherche
-                </Button>
-              </div>
-            </div>
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <Select>
+                      <SelectTrigger className="w-full sm:w-32">
+                        <SelectValue placeholder="Any Type" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="apartment">Appartement</SelectItem>
+                        <SelectItem value="house">Maison</SelectItem>
+                        <SelectItem value="condo">Copropriété</SelectItem>
+                        <SelectItem value="villa">Villa</SelectItem>
+                      </SelectContent>
+                    </Select>
+
+                    <Button className="flex items-center justify-center w-full sm:w-auto">
+                      <Search className="mr-2 h-4 w-4" />
+                      <span className="hidden sm:inline">
+                        Rechercher des propriétés
+                      </span>
+                      <span className="sm:hidden">Rechercher</span>
+                    </Button>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
 
           {/* Right Column - Image */}
@@ -349,8 +387,8 @@ export default function ShotTerme() {
             </div>
             <h3 className="font-bold mb-2">24/7 Support</h3>
             <p className="text-gray-600 text-sm">
-              Notre équipe d&apos;assistance est disponible 24 heures sur 24 pour
-              répondre à toutes vos questions.
+              Notre équipe d&apos;assistance est disponible 24 heures sur 24
+              pour répondre à toutes vos questions.
             </p>
           </div>
 
@@ -385,9 +423,9 @@ export default function ShotTerme() {
               </div>
             </div>
             <p className="text-gray-600 mb-4">
-              « J&apos;ai adoré mon séjour ! L&apos;appartement était exactement comme sur
-              la photo, propre et très bien situé. Le personnel était super
-              serviable aussi ! »
+              « J&apos;ai adoré mon séjour ! L&apos;appartement était exactement
+              comme sur la photo, propre et très bien situé. Le personnel était
+              super serviable aussi ! »
             </p>
             <div className="flex text-yellow-400">
               <span>★★★★★</span>
@@ -407,8 +445,9 @@ export default function ShotTerme() {
               </div>
             </div>
             <p className="text-gray-600 mb-4">
-              « Grand choix d&apos;appartements. J&apos;ai pu trouver la location à long
-              terme idéale pour mon séjour d&apos;affaires à Vancouver. »
+              « Grand choix d&apos;appartements. J&apos;ai pu trouver la
+              location à long terme idéale pour mon séjour d&apos;affaires à
+              Vancouver. »
             </p>
             <div className="flex text-yellow-400">
               <span>★★★★★</span>
@@ -431,9 +470,9 @@ export default function ShotTerme() {
               </div>
             </div>
             <p className="text-gray-600 mb-4">
-              « L&apos;ensemble du processus, de la réservation au départ, s&apos;est
-              déroulé sans problème.  J&apos;utiliserai certainement StayHub pour mes
-              prochains voyages au Canada ! »
+              « L&apos;ensemble du processus, de la réservation au départ,
+              s&apos;est déroulé sans problème.  J&apos;utiliserai certainement
+              StayHub pour mes prochains voyages au Canada ! »
             </p>
             <div className="flex text-yellow-400">
               <span>★★★★★</span>
