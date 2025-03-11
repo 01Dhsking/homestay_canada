@@ -18,7 +18,6 @@ import {
   CheckCircle,
   Clock,
   Heart,
-  MapPin,
 } from "lucide-react";
 import photo15 from "@/public/image/photo15.png";
 import photo3 from "@/public/image/photo3.png";

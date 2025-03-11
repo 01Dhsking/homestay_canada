@@ -17,7 +17,6 @@ import {
   CheckCircle,
   Clock,
   Heart,
-  MapPin,
 } from "lucide-react";
 import CardHouse from "@/components/ui/cardhouse";
 import photo15 from "@/public/image/photo15.png";
