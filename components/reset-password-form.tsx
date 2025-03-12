@@ -25,6 +25,7 @@ export function ResetPasswordForm({ token }: { token: string }) {
       router.push("/login")
     } catch (error) {
       toast.error("Failed to reset password")
+      console.error(error)
     } finally {
       setIsLoading(false)
     }

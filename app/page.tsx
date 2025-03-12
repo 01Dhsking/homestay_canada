@@ -20,7 +20,7 @@ import Footer from "@/components/ui/footer";
 
 const houseInfo = [
   {
-    image: photo3,
+    images: [photo3],
     type: "Populaire",
     price: "$150/night",
     name: "Downtown Luxury Suite",
@@ -33,7 +33,7 @@ const houseInfo = [
     commentary: "",
   },
   {
-    image: photo10,
+    images: [photo10],
     type: "Populaire",
     price: "$2,200/month",
     name: "Harbor View Apartment",
@@ -46,7 +46,7 @@ const houseInfo = [
     commentary: "",
   },
   {
-    image: photo13,
+    images: [photo13],
     type: "Populaire",
     price: "$200/night",
     name: "Urban Garden Plus",
@@ -77,17 +77,22 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:space-x-3 mb-6 sm:mb-8">
-              <Button className="flex items-center justify-center space-x-2 w-full sm:w-auto mb-2 sm:mb-0">
-                <Calendar className="h-4 w-4" />
-                <span>Séjours de courte durée</span>
-              </Button>
-              <Button
-                variant="outline"
-                className="flex items-center justify-center space-x-2 w-full sm:w-auto"
-              >
-                <HomeIcon className="h-4 w-4" />
-                <span>Locations longue durée</span>
-              </Button>
+              <Link href={"/shortterme"}>
+                <Button
+                  className="flex items-center justify-center space-x-2 w-full sm:w-auto mb-2 sm:mb-0"
+                >
+                  <Calendar className="h-4 w-4" />
+                  <span>Séjours de courte durée</span>
+                </Button>
+              </Link>
+              <Link href={"/longterme"}>
+                <Button
+                  className="flex items-center justify-center space-x-2 w-full sm:w-auto"
+                >
+                  <HomeIcon className="h-4 w-4" />
+                  <span>Locations longue durée</span>
+                </Button>
+              </Link>
             </div>
 
             <div className="flex flex-wrap gap-4 mb-8">

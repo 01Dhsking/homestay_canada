@@ -3,11 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/ui/header";
 import { Toaster } from "@/components/ui/sonner"
-import Head from "next/head";
-import { SessionProvider, } from "next-auth/react";
 import { getServerSession } from "next-auth"
 import { authOptions } from "@/lib/auth"
-import { headers } from 'next/headers';
 import { Providers } from "@/components/providers"
 
 const geistSans = Geist({

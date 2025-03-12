@@ -1,4 +1,7 @@
-import { LoginForm } from "@/components/login-form"
+import { LoginForm } from "@/components/login-form";
+import Image from "next/image";
+import photo15 from "@/public/image/photo15.png";
+
 
 export default function LoginPage() {
   return (
@@ -11,12 +14,14 @@ export default function LoginPage() {
         </div>
       </div>
       <div className="bg-muted relative hidden lg:block">
-        <img
-          src="/placeholder.svg"
+        <Image
+          layout="fill"
+          objectFit="cover"
+          src={photo15}
           alt="Image"
           className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
         />
       </div>
     </div>
-  )
+  );
 }

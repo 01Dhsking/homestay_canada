@@ -42,6 +42,7 @@ export function LoginForm({
       }
     } catch (error) {
       setError("Something went wrong")
+      console.error(error)
     } finally {
       setIsLoading(false)
     }

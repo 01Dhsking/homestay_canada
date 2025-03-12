@@ -22,6 +22,7 @@ export function ForgotPasswordForm() {
       toast.success("Check your email for reset instructions")
     } catch (error) {
       toast.error("Something went wrong")
+      console.error(error)
     } finally {
       setIsLoading(false)
     }
@@ -32,7 +33,7 @@ export function ForgotPasswordForm() {
       <div className="space-y-2 text-center">
         <h1 className="text-2xl font-bold">Forgot your password?</h1>
         <p className="text-muted-foreground text-sm">
-          Enter your email address and we'll send you a link to reset your password.
+          Enter your email address and we&apos;ll send you a link to reset your password.
         </p>
       </div>
       <div className="space-y-2">

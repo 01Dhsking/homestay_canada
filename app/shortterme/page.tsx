@@ -21,170 +21,83 @@ import {
 } from "lucide-react";
 import CardHouse from "@/components/ui/cardhouse";
 import photo15 from "@/public/image/photo15.png";
-import photo3 from "@/public/image/photo3.png";
-import photo10 from "@/public/image/photo10.png";
-import photo13 from "@/public/image/photo13.png";
 import toronto2 from "@/public/image/toronto2.jpg";
 import vancouver1 from "@/public/image/vancouver1.jpg";
 import montreal1 from "@/public/image/montreal1.jpg";
 import calgary1 from "@/public/image/calgary1.jpg";
 
+import m1_p1 from "@/public/image/house/m1_p1.jpg";
+import m1_p2 from "@/public/image/house/m1_p2.jpg";
+import m1_p3 from "@/public/image/house/m1_p3.jpg";
+import m1_p4 from "@/public/image/house/m1_p4.jpg";
+import m2_p1 from "@/public/image/house/m2_p1.jpg";
+import m2_p2 from "@/public/image/house/m2_p2.jpg";
+import m2_p3 from "@/public/image/house/m2_p3.jpg";
+import m2_p4 from "@/public/image/house/m2_p4.jpg";
+import m2_p5 from "@/public/image/house/m2_p5.jpg";
+import m2_p6 from "@/public/image/house/m2_p6.jpg";
+import m3_p1 from "@/public/image/house/m3_p1.jpg";
+import m3_p2 from "@/public/image/house/m3_p2.jpg";
+import m3_p3 from "@/public/image/house/m3_p3.jpg";
+import m3_p4 from "@/public/image/house/m3_p4.jpg";
+import m3_p5 from "@/public/image/house/m3_p5.jpg";
+import m3_p6 from "@/public/image/house/m3_p6.jpg";
+import m3_p7 from "@/public/image/house/m3_p7.jpg";
+import m3_p8 from "@/public/image/house/m3_p8.jpg";
+import m4_p1 from "@/public/image/house/m4_p1.jpg";
+import m4_p2 from "@/public/image/house/m4_p2.jpg";
+import m4_p3 from "@/public/image/house/m4_p3.jpg";
+import m4_p4 from "@/public/image/house/m4_p4.jpg";
+import m4_p5 from "@/public/image/house/m4_p5.jpg";
+
 const houseInfo = [
   {
-    image: photo3,
+    images: [m1_p1, m1_p2, m1_p3, m1_p4],
     type: "Populaire",
-    price: "$150/night",
-    name: "Downtown Luxury Suite",
+    price: "$1300/night",
+    name: "Suite rénovée d'une chambre",
     available: true,
-    houseName: "Downtown Luxury Suite",
     location: "Vancouver, Canada",
-    bed: 2,
-    bath: 2,
-    size: "980 sq.ft",
-    commentary: "",
+    bed: 1,
+    bath: 1,
+    size: "500 sq.ft",
+    commentary: "située au 4ème étage de l'immeuble, eau, chauffage inclus dans le loyer",
   },
   {
-    image: photo13,
+    images: [m2_p2, m2_p3, m2_p4, m2_p1, m2_p5, m2_p6],
     type: "Populaire",
-    price: "$200/night",
-    name: "Urban Garden Plus",
+    price: "$1400/night",
+    name: "Suite rénovée d'une chambre",
     available: true,
-    houseName: "Downtown Luxury Suite",
+    location: "Vancouver, Canada",
+    bed: 1,
+    bath: 1,
+    size: "500 sq.ft",
+    commentary: "située au 1er étage de l'immeuble, eau, chauffage inclus dans le loyer",
+  },
+  {
+    images: [m3_p1, m3_p2, m3_p3, m3_p4, m3_p5, m3_p6, m3_p7, m3_p8],
+    type: "Populaire",
+    price: "$1850/night",
+    name: "rez-de-chaussée de deux chambres",
+    available: true,
     location: "Montreal, Canada",
     bed: 2,
     bath: 2,
-    size: "650 sq.ft",
-    commentary: "",
+    size: "970 sq.ft",
+    commentary: "eau, chauffage inclus dans le loyer",
   },
   {
-    image: photo10,
+    images: [m4_p1, m4_p2, m4_p3, m4_p4, m4_p5],
     type: "Populaire",
-    price: "$2,200/month",
-    name: "Harbor View Apartment",
+    price: "$1900/night",
+    name: "suite a deux chambre",
     available: true,
-    houseName: "Downtown Luxury Suite",
-    location: "Toronto, Canada",
-    bed: 2,
-    bath: 2,
-    size: "1,200 sq.ft",
-    commentary: "",
-  },
-  {
-    image: photo13,
-    type: "Populaire",
-    price: "$200/night",
-    name: "Urban Garden Plus",
-    available: true,
-    houseName: "Downtown Luxury Suite",
     location: "Montreal, Canada",
-    bed: 2,
-    bath: 2,
+    bed: 1,
+    bath: 1,
     size: "650 sq.ft",
-    commentary: "",
-  },
-  {
-    image: photo13,
-    type: "Populaire",
-    price: "$200/night",
-    name: "Urban Garden Plus",
-    available: true,
-    houseName: "Downtown Luxury Suite",
-    location: "Montreal, Canada",
-    bed: 2,
-    bath: 2,
-    size: "650 sq.ft",
-    commentary: "",
-  },
-  {
-    image: photo13,
-    type: "Populaire",
-    price: "$200/night",
-    name: "Urban Garden Plus",
-    available: true,
-    houseName: "Downtown Luxury Suite",
-    location: "Montreal, Canada",
-    bed: 2,
-    bath: 2,
-    size: "650 sq.ft",
-    commentary: "",
-  },
-  {
-    image: photo13,
-    type: "Populaire",
-    price: "$200/night",
-    name: "Urban Garden Plus",
-    available: true,
-    houseName: "Downtown Luxury Suite",
-    location: "Montreal, Canada",
-    bed: 2,
-    bath: 2,
-    size: "650 sq.ft",
-    commentary: "",
-  },
-  {
-    image: photo13,
-    type: "Populaire",
-    price: "$200/night",
-    name: "Urban Garden Plus",
-    available: true,
-    houseName: "Downtown Luxury Suite",
-    location: "Montreal, Canada",
-    bed: 2,
-    bath: 2,
-    size: "650 sq.ft",
-    commentary: "",
-  },
-  {
-    image: photo13,
-    type: "Populaire",
-    price: "$200/night",
-    name: "Urban Garden Plus",
-    available: true,
-    houseName: "Downtown Luxury Suite",
-    location: "Montreal, Canada",
-    bed: 2,
-    bath: 2,
-    size: "650 sq.ft",
-    commentary: "",
-  },
-  {
-    image: photo13,
-    type: "Populaire",
-    price: "$200/night",
-    name: "Urban Garden Plus",
-    available: true,
-    houseName: "Downtown Luxury Suite",
-    location: "Montreal, Canada",
-    bed: 2,
-    bath: 2,
-    size: "650 sq.ft",
-    commentary: "",
-  },
-  {
-    image: photo13,
-    type: "Populaire",
-    price: "$200/night",
-    name: "Urban Garden Plus",
-    available: true,
-    houseName: "Downtown Luxury Suite",
-    location: "Montreal, Canada",
-    bed: 2,
-    bath: 2,
-    size: "650 sq.ft",
-    commentary: "",
-  },
-  {
-    image: photo13,
-    type: "Populaire",
-    price: "$200/night",
-    name: "Urban Garden Plus",
-    available: true,
-    houseName: "Downtown Luxury Suite",
-    location: "Montreal, Canada",
-    bed: 2,
-    bath: 2,
-    size: "650 sq.ft",
-    commentary: "",
+    commentary: "situé au 5eme étage",
   },
 ];
 

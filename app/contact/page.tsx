@@ -48,7 +48,7 @@ function Contact() {
           <div className="grid md:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div>
-              <h2 className="text-2xl font-bold mb-6">Get In Touch</h2>
+              <h2 className="text-2xl font-bold mb-6">Entrer en contact</h2>
               <Card>
                 <CardContent className="pt-6">
                   <Form {...form}>
@@ -58,12 +58,12 @@ function Contact() {
                     >
                       <FormField
                         control={form.control}
-                        name="name"
+                        name="nom"
                         render={({ field }) => (
                           <FormItem>
                             <FormLabel>Full Name</FormLabel>
                             <FormControl>
-                              <Input placeholder="Your name" {...field} />
+                              <Input placeholder="Votre nom" {...field} />
                             </FormControl>
                           </FormItem>
                         )}
@@ -74,11 +74,11 @@ function Contact() {
                         name="email"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Email Address</FormLabel>
+                            <FormLabel>Adresse email</FormLabel>
                             <FormControl>
                               <Input
                                 type="email"
-                                placeholder="Your email"
+                                placeholder="Votre email"
                                 {...field}
                               />
                             </FormControl>
@@ -88,13 +88,13 @@ function Contact() {
 
                       <FormField
                         control={form.control}
-                        name="phone"
+                        name="téléphone"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Phone Number</FormLabel>
+                            <FormLabel>Numéro de téléphone</FormLabel>
                             <FormControl>
                               <Input
-                                placeholder="Your phone number"
+                                placeholder="Votre numéro de téléphone"
                                 {...field}
                               />
                             </FormControl>
@@ -107,30 +107,30 @@ function Contact() {
                         name="inquiry"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Inquiry Type</FormLabel>
+                            <FormLabel>Type de demande</FormLabel>
                             <Select
                               onValueChange={field.onChange}
                               defaultValue={field.value}
                             >
                               <FormControl>
                                 <SelectTrigger>
-                                  <SelectValue placeholder="Select an inquiry type" />
+                                  <SelectValue placeholder="Sélectionnez un type de demande" />
                                 </SelectTrigger>
                               </FormControl>
                               <SelectContent>
-                                <SelectItem value="booking">
-                                  Booking Questions
+                                <SelectItem value="réservation">
+                                Questions de réservation
                                 </SelectItem>
-                                <SelectItem value="property">
-                                  Property Information
+                                <SelectItem value="propriété">
+                                Informations sur la propriété
                                 </SelectItem>
-                                <SelectItem value="support">
-                                  Customer Support
+                                <SelectItem value="soutien">
+                                Service client
                                 </SelectItem>
-                                <SelectItem value="partnership">
-                                  Partnership Opportunities
+                                <SelectItem value="partenariat">
+                                Opportunités de partenariat
                                 </SelectItem>
-                                <SelectItem value="other">Other</SelectItem>
+                                <SelectItem value="autre">Autre</SelectItem>
                               </SelectContent>
                             </Select>
                           </FormItem>
@@ -145,7 +145,7 @@ function Contact() {
                             <FormLabel>Message</FormLabel>
                             <FormControl>
                               <Textarea
-                                placeholder="How can we help you?"
+                                placeholder="Comment pouvons-nous vous aider?"
                                 className="min-h-32"
                                 {...field}
                               />
@@ -155,7 +155,7 @@ function Contact() {
                       />
 
                       <Button type="submit" className="w-full">
-                        Send Message
+                      Envoyer un message
                       </Button>
                     </form>
                   </Form>
@@ -170,7 +170,7 @@ function Contact() {
                 <Card>
                   <CardContent className="pt-6">
                     <div className="space-y-4">
-                      <div className="flex items-start">
+                      {/* <div className="flex items-start">
                         <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -196,7 +196,7 @@ function Contact() {
                             Property Inquiries: +1 (555) 987-6543
                           </p>
                         </div>
-                      </div>
+                      </div> */}
 
                       <div className="flex items-start">
                         <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
@@ -218,15 +218,12 @@ function Contact() {
                         <div>
                           <h3 className="font-semibold text-lg">Email</h3>
                           <p className="text-gray-600">
-                            General Inquiries: info@stayhub.ca
-                          </p>
-                          <p className="text-gray-600">
-                            Support: support@stayhub.ca
+                            Support: CAHomeStay@protonmail.com
                           </p>
                         </div>
                       </div>
 
-                      <div className="flex items-start">
+                      {/* <div className="flex items-start">
                         <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -257,7 +254,7 @@ function Contact() {
                           <p className="text-gray-600">Suite 400</p>
                           <p className="text-gray-600">Toronto, ON M5V 2A1</p>
                         </div>
-                      </div>
+                      </div> */}
 
                       <div className="flex items-start">
                         <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">

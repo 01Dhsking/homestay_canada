@@ -38,7 +38,6 @@ import {
   Sparkles,
   UserPen,
 } from "lucide-react";
-import { User } from "next-auth";
 
 interface HeaderProps {
   user?:

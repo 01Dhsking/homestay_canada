@@ -4,15 +4,21 @@ import { Button } from "./button";
 import Image, { StaticImageData } from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Bed, Bath, Maximize } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 interface dataproperty {
   dataImage: {
-    image: string | StaticImageData;
+    images: (string | StaticImageData)[];  // Changed to array of images
     type: string;
     price: string;
     name: string;
     available: boolean;
-    houseName: string;
     location: string;
     bed: number;
     bath: number;
@@ -26,13 +32,34 @@ function CardHouse({dataImage, className} : dataproperty) {
   return (
     <Card className={`${className} overflow-hidden`}>
       <div className="relative lg:h-[300px] h-[200px]">
-        <Image
-          src={dataImage.image}
-          alt="Downtown Luxury Suite"
-          layout="fill"
-          objectFit="cover"
-        />
-        <Badge className="absolute top-3 left-3 bg-blue-600">
+        {dataImage.images.length === 1 ? (
+          <Image
+            src={dataImage.images[0]}
+            alt="Property Image"
+            layout="fill"
+            objectFit="cover"
+          />
+        ) : (
+          <Carousel className="w-full h-full">
+            <CarouselContent>
+              {dataImage.images.map((image, index) => (
+                <CarouselItem key={index}>
+                  <div className="relative w-full h-full lg:h-[300px] h-[200px]">
+                    <Image
+                      src={image}
+                      alt={`Property Image ${index + 1}`}
+                      layout="fill"
+                      objectFit="cover"
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="absolute left-2 z-10" />
+            <CarouselNext className="absolute right-2 z-10" />
+          </Carousel>
+        )}
+        <Badge className="absolute top-3 left-3 bg-blue-600 z-20">
           {dataImage.type}
         </Badge>
       </div>
