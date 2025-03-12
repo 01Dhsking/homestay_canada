@@ -16,6 +16,7 @@ import photo3 from "@/public/image/photo3.png";
 import photo10 from "@/public/image/photo10.png";
 import photo13 from "@/public/image/photo13.png";
 import iconemoji_eyeshealt from "@/public/icon/emoji_eyeshealt.svg";
+import Footer from "@/components/ui/footer";
 
 const houseInfo = [
   {
@@ -224,6 +225,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }

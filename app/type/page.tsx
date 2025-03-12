@@ -9,6 +9,7 @@ import {
   ShieldCheck,
   Map,
 } from "lucide-react";
+import Footer from "@/components/ui/footer";
 
 import photo12 from "@/public/image/photo12.png";
 import photo9 from "@/public/image/photo9.png";
@@ -297,6 +298,8 @@ export default function House() {
           </div>
         </div>
       </section>
+      <Footer />
+
     </div>
   );
 }

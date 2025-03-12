@@ -19,6 +19,7 @@ import {
   Clock,
   Heart,
 } from "lucide-react";
+import Footer from "@/components/ui/footer";
 import photo15 from "@/public/image/photo15.png";
 import photo3 from "@/public/image/photo3.png";
 import photo10 from "@/public/image/photo10.png";
@@ -507,6 +508,7 @@ export default function Longterme() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }

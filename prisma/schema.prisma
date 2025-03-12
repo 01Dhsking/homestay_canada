@@ -1,0 +1,111 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  password      String
+  image         String?
+  phone         String?
+  city          String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  role          Role      @default(USER)
+  bookings      Booking[]
+  reviews       Review[]
+  favorites     Property[] @relation("UserFavorites")
+}
+
+model Property {
+  id          String    @id @default(cuid())
+  title       String
+  description String
+  type        PropertyType
+  category    PropertyCategory
+  price       Float
+  location    String
+  city        String
+  country     String    @default("Canada")
+  address     String
+  bedrooms    Int
+  bathrooms   Int
+  size        Float
+  images      String[]
+  available   Boolean   @default(true)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  amenities   Amenity[]
+  bookings    Booking[]
+  reviews     Review[]
+  favoredBy   User[]    @relation("UserFavorites")
+}
+
+model Booking {
+  id         String   @id @default(cuid())
+  startDate  DateTime
+  endDate    DateTime
+  totalPrice Float
+  status     BookingStatus @default(PENDING)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  userId     String
+  propertyId String
+  user       User     @relation(fields: [userId], references: [id])
+  property   Property @relation(fields: [propertyId], references: [id])
+}
+
+model Review {
+  id          String   @id @default(cuid())
+  rating      Int
+  comment     String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  userId      String
+  propertyId  String
+  user        User     @relation(fields: [userId], references: [id])
+  property    Property @relation(fields: [propertyId], references: [id])
+}
+
+model Amenity {
+  id          String    @id @default(cuid())
+  name        String    @unique
+  properties  Property[]
+}
+
+enum Role {
+  USER
+  ADMIN
+  HOST
+}
+
+enum PropertyType {
+  APARTMENT
+  HOUSE
+  CONDO
+  VILLA
+}
+
+enum PropertyCategory {
+  SHORT_TERM
+  LONG_TERM
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+  COMPLETED
+}

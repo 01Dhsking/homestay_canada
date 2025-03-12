@@ -11,6 +11,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import Footer from "@/components/ui/footer";
 import {
   Calendar,
   Search,
@@ -507,6 +508,8 @@ export default function ShotTerme() {
           </div>
         </div>
       </section>
+      <Footer />
+
     </div>
   );
 }

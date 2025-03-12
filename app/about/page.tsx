@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import Footer from "@/components/ui/footer";
 
 function About() {
   return (
@@ -249,6 +250,8 @@ function About() {
           </div>
         </div>
       </div>
+      <Footer />
+
     </div>
   );
 }

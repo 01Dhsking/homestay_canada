@@ -5,7 +5,6 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
 import { Button } from "./button";
 import { Menu } from "lucide-react";
-import { Card } from "./card";
 import {
   Sheet,
   SheetContent,
@@ -21,10 +20,19 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { usePathname } from "next/navigation";
+import { signOut } from "next-auth/react";
+import { User } from "next-auth";
 
-const connecter = true;
+interface HeaderProps {
+  user: {
+    id: string;
+    name?: string | null;
+    email?: string | null;
+    image?: string | null;
+  } | null | undefined;
+}
 
-function Header() {
+function Header({ user }: HeaderProps) {
   const pathname = usePathname();
 
   return (
@@ -98,20 +106,27 @@ function Header() {
 
         {/* Desktop Buttons */}
         <div className="hidden md:flex space-x-3">
-          {connecter ? (
-            <Link href={"/profile"}>
-              <div className="flex flex-row items-center space-x-2 py-2 px-5 border border-gray-300 rounded-2xl">
-                <Avatar>
-                  <AvatarImage src="https://github.com/shadcn.png" />
-                  <AvatarFallback>CN</AvatarFallback>
-                </Avatar>
-                <p>Profile</p>
-              </div>
-            </Link>
+          {user ? (
+            <div className="flex space-x-3">
+              <Link href="/profile">
+                <div className="flex flex-row items-center space-x-2 py-2 px-5 border border-gray-300 rounded-2xl">
+                  <Avatar>
+                    <AvatarImage src={user.image || "https://github.com/shadcn.png"} />
+                    <AvatarFallback>{user.name?.[0] || "U"}</AvatarFallback>
+                  </Avatar>
+                  <p>{user.name || "Profile"}</p>
+                </div>
+              </Link>
+              <Button variant="outline" size="sm" onClick={() => signOut()}>
+                Se déconnecter
+              </Button>
+            </div>
           ) : (
-            <Button variant="outline" size="sm">
-              Se connecter
-            </Button>
+            <Link href="/login">
+              <Button variant="outline" size="sm">
+                Se connecter
+              </Button>
+            </Link>
           )}
         </div>
 

@@ -10,6 +10,7 @@ import {
   FormItem,
   FormLabel,
 } from "@/components/ui/form";
+import Footer from "@/components/ui/footer";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import {
@@ -361,6 +362,8 @@ function Contact() {
           </div>
         </div>
       </div> */}
+
+      <Footer />
     </div>
   );
 }
