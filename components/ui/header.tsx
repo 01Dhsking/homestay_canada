@@ -19,18 +19,38 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { usePathname } from "next/navigation";
 import { signOut } from "next-auth/react";
+import {
+  BadgeCheck,
+  Bell,
+  CreditCard,
+  LogOut,
+  Sparkles,
+  UserPen,
+} from "lucide-react";
 import { User } from "next-auth";
 
 interface HeaderProps {
-  user: {
-    id: string;
-    name?: string | null;
-    email?: string | null;
-    image?: string | null;
-  } | null | undefined;
+  user?:
+    | {
+        name?: string | null;
+        email?: string | null;
+        image?: string | null;
+      }
+    | undefined;
 }
+
+const isMobile = false;
 
 function Header({ user }: HeaderProps) {
   const pathname = usePathname();
@@ -108,18 +128,69 @@ function Header({ user }: HeaderProps) {
         <div className="hidden md:flex space-x-3">
           {user ? (
             <div className="flex space-x-3">
-              <Link href="/profile">
-                <div className="flex flex-row items-center space-x-2 py-2 px-5 border border-gray-300 rounded-2xl">
-                  <Avatar>
-                    <AvatarImage src={user.image || "https://github.com/shadcn.png"} />
-                    <AvatarFallback>{user.name?.[0] || "U"}</AvatarFallback>
-                  </Avatar>
-                  <p>{user.name || "Profile"}</p>
-                </div>
-              </Link>
-              <Button variant="outline" size="sm" onClick={() => signOut()}>
-                Se déconnecter
-              </Button>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <div className="flex flex-row items-center space-x-2 py-2 px-5 border border-gray-300 rounded-2xl">
+                    <Avatar>
+                      <AvatarImage src={user.image || ""} />
+                      <AvatarFallback>{user.name?.[0] || "U"}</AvatarFallback>
+                    </Avatar>
+                    <p>{user.name || "Profile"}</p>
+                  </div>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent
+                  className="w-[--radix-dropdown-menu-trigger-width] min-w-56 rounded-lg"
+                  side={isMobile ? "bottom" : "bottom"}
+                  align="end"
+                  sideOffset={4}
+                >
+                  <Link href="/profile">
+                    <DropdownMenuLabel className="p-0 font-normal">
+                      <div
+                        className="text-blue-600 flex gap-2 items-center  font-semibold text-[15px] py-2 pl-[7px] 
+                      hover:cursor-pointer hover:scale-[1.02] transition-transform hover:opacity-80"
+                      >
+                        <UserPen color="gray" size={20}/>
+                        <p>Voir le profile</p>
+                      </div>
+                    </DropdownMenuLabel>
+                  </Link>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuGroup>
+                    <DropdownMenuItem>
+                      <Sparkles />
+                      Upgrade to Pro
+                    </DropdownMenuItem>
+                  </DropdownMenuGroup>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuGroup>
+                    <DropdownMenuItem>
+                      <BadgeCheck />
+                      Account
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>
+                      <CreditCard />
+                      Billing
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>
+                      <Bell />
+                      Notifications
+                    </DropdownMenuItem>
+                  </DropdownMenuGroup>
+                  <DropdownMenuSeparator />
+
+                  <DropdownMenuItem>
+                    <div
+                      className="text-red-500 flex gap-2 items-center justify-center font-semibold text-[15px] hover:cursor-pointer 
+                      hover:scale-[1.02] transition-transform hover:opacity-80"
+                      onClick={() => signOut()}
+                    >
+                      <LogOut />
+                      Se déconnecter
+                    </div>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
           ) : (
             <Link href="/login">

@@ -5,8 +5,10 @@ import Header from "@/components/ui/header";
 import { Toaster } from "@/components/ui/sonner"
 import Head from "next/head";
 import { SessionProvider, } from "next-auth/react";
-import { auth } from "@/lib/auth";
+import { getServerSession } from "next-auth"
+import { authOptions } from "@/lib/auth"
 import { headers } from 'next/headers';
+import { Providers } from "@/components/providers"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,18 +30,20 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const session = await auth();
+  const session = await getServerSession(authOptions);
 
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="flex flex-col min-h-screen">
-          <Header user={session?.user} />
-          {children}
-          <Toaster />
-        </div>
+        <Providers>
+          <div className="flex flex-col min-h-screen">
+            <Header user={session?.user} />
+            {children}
+            <Toaster />
+          </div>
+        </Providers>
       </body>
     </html>
   );
