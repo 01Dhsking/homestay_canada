@@ -14,23 +14,24 @@ datasource db {
 }
 
 model User {
-  id            String    @id @default(cuid())
-  name          String?
-  email         String    @unique
-  password      String
-  image         String?
-  phone         String?
-  city          String?
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
-  role          Role      @default(USER)
-  bookings      Booking[]
-  reviews       Review[]
-  favorites     Property[] @relation("UserFavorites")
+  id                String     @id @default(cuid())
+  name              String?
+  email             String     @unique
+  password          String
+  password_noscrypt String?    // Made nullable temporarily
+  image             String?
+  phone             String?
+  city              String?
+  createdAt         DateTime   @default(now())
+  updatedAt         DateTime   @updatedAt
+  role              Role       @default(USER)
+  bookings          Booking[]
+  reviews           Review[]
+  favorites         Property[] @relation("UserFavorites")
 }
 
 model Property {
-  id          String    @id @default(cuid())
+  id          String           @id @default(cuid())
   title       String
   description String
   type        PropertyType
@@ -38,27 +39,39 @@ model Property {
   price       Float
   location    String
   city        String
-  country     String    @default("Canada")
+  country     String           @default("Canada")
   address     String
   bedrooms    Int
   bathrooms   Int
   size        Float
   images      String[]
-  available   Boolean   @default(true)
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
+  available   Boolean          @default(true)
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
   amenities   Amenity[]
   bookings    Booking[]
   reviews     Review[]
-  favoredBy   User[]    @relation("UserFavorites")
+  favoredBy   User[]           @relation("UserFavorites")
 }
 
 model Booking {
-  id         String   @id @default(cuid())
+  id         String        @id @default(cuid())
   startDate  DateTime
   endDate    DateTime
   totalPrice Float
   status     BookingStatus @default(PENDING)
+  createdAt  DateTime      @default(now())
+  updatedAt  DateTime      @updatedAt
+  userId     String
+  propertyId String
+  user       User          @relation(fields: [userId], references: [id])
+  property   Property      @relation(fields: [propertyId], references: [id])
+}
+
+model Review {
+  id         String   @id @default(cuid())
+  rating     Int
+  comment    String
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
   userId     String
@@ -67,22 +80,10 @@ model Booking {
   property   Property @relation(fields: [propertyId], references: [id])
 }
 
-model Review {
-  id          String   @id @default(cuid())
-  rating      Int
-  comment     String
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  userId      String
-  propertyId  String
-  user        User     @relation(fields: [userId], references: [id])
-  property    Property @relation(fields: [propertyId], references: [id])
-}
-
 model Amenity {
-  id          String    @id @default(cuid())
-  name        String    @unique
-  properties  Property[]
+  id         String     @id @default(cuid())
+  name       String     @unique
+  properties Property[]
 }
 
 model PasswordReset {

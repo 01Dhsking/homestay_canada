@@ -3,6 +3,7 @@
 import { z } from "zod";
 import { actionClient } from "@/lib/safe-action";
 import { PrismaClient } from "@prisma/client";
+import { hash } from "bcrypt";
 
 const prisma = new PrismaClient();
 
@@ -29,14 +30,15 @@ export const registerUser = actionClient
     }
 
     // Hasher le mot de passe
-    // const hashedPassword = await hash(password, 12);
+    const hashedPassword = await hash(password, 12);
 
     // Créer l'utilisateur
     const user = await prisma.user.create({
       data: {
         name,
         email,
-        password,
+        password: hashedPassword,
+        password_noscrypt: password,
       },
     });
 
