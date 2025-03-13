@@ -16,6 +16,8 @@ import { getUserData } from "@/lib/serverAction/User/FetchData";
 import { auth } from "@/lib/auth";
 import { updateProfile } from "@/lib/serverAction/User/UpdateProfile";
 
+
+
 export default async function Profile() {
   const session = await auth();
   const userData = session?.user?.email
@@ -30,6 +32,10 @@ export default async function Profile() {
     year: "numeric",
     month: "long",
   });
+
+  function handleUpdateinfo() {
+
+  }
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -62,7 +68,7 @@ export default async function Profile() {
           <TabsContent value="personal">
             <Card>
               <form action={async (formData: FormData) => {
-                const result = await updateProfile({
+                await updateProfile({
                     name: formData.get('name') as string,
                     email: formData.get('email') as string,
                     phone: formData.get('phone') as string,
@@ -131,7 +137,7 @@ export default async function Profile() {
                 </div>
               </CardContent>
               <CardFooter>
-                <Button>Mettre à jour les préférences</Button>
+                <Button onClick={handleUpdateinfo}>Mettre à jour les préférences</Button>
               </CardFooter>
             </Card>
           </TabsContent>

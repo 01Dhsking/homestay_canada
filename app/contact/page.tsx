@@ -3,6 +3,7 @@ import React from "react";
 import { useForm, FieldValues } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { toast } from "sonner"
 import {
   Form,
   FormControl,
@@ -43,7 +44,8 @@ function Contact() {
         throw new Error("Erreur lors de l'envoi");
       }
     } catch (error) {
-      alert("Erreur lors de l'envoi du message. Veuillez réessayer.");
+      toast.error("Erreur lors de l'envoi du message. Veuillez réessayer.");
+      console.error(error)
     } finally {
       setSending(false);
     }
