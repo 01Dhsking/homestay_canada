@@ -52,6 +52,7 @@ import m4_p5 from "@/public/image/house/m4_p5.jpg";
 
 const houseInfo = [
   {
+    id: "id_1",
     images: [m1_p1, m1_p2, m1_p3, m1_p4],
     type: "Populaire",
     price: "$1300/night",
@@ -64,6 +65,7 @@ const houseInfo = [
     commentary: "située au 4ème étage de l'immeuble, eau, chauffage inclus dans le loyer",
   },
   {
+    id: "id_2",
     images: [m2_p2, m2_p3, m2_p4, m2_p1, m2_p5, m2_p6],
     type: "Populaire",
     price: "$1400/night",
@@ -76,6 +78,7 @@ const houseInfo = [
     commentary: "située au 1er étage de l'immeuble, eau, chauffage inclus dans le loyer",
   },
   {
+    id: "id_3",
     images: [m3_p1, m3_p2, m3_p3, m3_p4, m3_p5, m3_p6, m3_p7, m3_p8],
     type: "Populaire",
     price: "$1850/night",
@@ -88,6 +91,7 @@ const houseInfo = [
     commentary: "eau, chauffage inclus dans le loyer",
   },
   {
+    id: "id_4",
     images: [m4_p1, m4_p2, m4_p3, m4_p4, m4_p5],
     type: "Populaire",
     price: "$1900/night",
@@ -271,7 +275,7 @@ export default function Longterme() {
 
         <div className="grid md:grid-cols-3 gap-6">
           {houseInfo.map((house, index) => {
-            return <CardHouse key={index} dataImage={house} />;
+            return <CardHouse key={index} dataImage={house} time={"longterme"} />;
           })}
         </div>
       </section>

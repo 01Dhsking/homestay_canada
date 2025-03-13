@@ -23,10 +23,30 @@ import {
 
 function Contact() {
   const form = useForm();
+  const [sending, setSending] = React.useState(false);
 
-  const onSubmit = (data: FieldValues) => {
-    console.log(data);
-    // Handle form submission
+  const onSubmit = async (data: FieldValues) => {
+    setSending(true);
+    try {
+      const response = await fetch("/api/send", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (response.ok) {
+        form.reset();
+        alert("Message envoyé avec succès!");
+      } else {
+        throw new Error("Erreur lors de l'envoi");
+      }
+    } catch (error) {
+      alert("Erreur lors de l'envoi du message. Veuillez réessayer.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -119,18 +139,48 @@ function Contact() {
                               </FormControl>
                               <SelectContent>
                                 <SelectItem value="réservation">
-                                Questions de réservation
+                                  Questions de réservation
                                 </SelectItem>
                                 <SelectItem value="propriété">
-                                Informations sur la propriété
+                                  Informations sur la propriété
                                 </SelectItem>
                                 <SelectItem value="soutien">
-                                Service client
+                                  Service client
                                 </SelectItem>
                                 <SelectItem value="partenariat">
-                                Opportunités de partenariat
+                                  Opportunités de partenariat
                                 </SelectItem>
                                 <SelectItem value="autre">Autre</SelectItem>
+                              </SelectContent>
+                            </Select>
+                          </FormItem>
+                        )}
+                      />
+
+                      <FormField
+                        control={form.control}
+                        name="category"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>
+                              Type maison , long terme ou court terme (optionel)
+                            </FormLabel>
+                            <Select
+                              onValueChange={field.onChange}
+                              defaultValue={field.value}
+                            >
+                              <FormControl>
+                                <SelectTrigger>
+                                  <SelectValue placeholder="Sélectionnez un type de demande" />
+                                </SelectTrigger>
+                              </FormControl>
+                              <SelectContent>
+                                <SelectItem value="réservation">
+                                  Long terme
+                                </SelectItem>
+                                <SelectItem value="propriété">
+                                  Court terme
+                                </SelectItem>
                               </SelectContent>
                             </Select>
                           </FormItem>
@@ -154,8 +204,12 @@ function Contact() {
                         )}
                       />
 
-                      <Button type="submit" className="w-full">
-                      Envoyer un message
+                      <Button
+                        type="submit"
+                        className="w-full"
+                        disabled={sending}
+                      >
+                        {sending ? "Envoi en cours..." : "Envoyer un message"}
                       </Button>
                     </form>
                   </Form>

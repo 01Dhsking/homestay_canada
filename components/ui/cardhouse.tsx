@@ -5,16 +5,34 @@ import Image, { StaticImageData } from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Bed, Bath, Maximize } from "lucide-react";
 import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
+import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Link from "next/link";
 
 interface dataproperty {
   dataImage: {
-    images: (string | StaticImageData)[];  // Changed to array of images
+    images: (string | StaticImageData)[]; // Changed to array of images
     type: string;
     price: string;
     name: string;
@@ -26,9 +44,10 @@ interface dataproperty {
     commentary?: string;
   };
   className?: string;
+  time: string;
 }
 
-function CardHouse({dataImage, className} : dataproperty) {
+function CardHouse({ dataImage, className, time }: dataproperty) {
   return (
     <Card className={`${className} overflow-hidden`}>
       <div className="relative lg:h-[300px] h-[200px]">
@@ -44,7 +63,7 @@ function CardHouse({dataImage, className} : dataproperty) {
             <CarouselContent>
               {dataImage.images.map((image, index) => (
                 <CarouselItem key={index}>
-                  <div className="relative w-full h-full lg:h-[300px] h-[200px]">
+                  <div className="relative w-full lg:h-[300px] h-[200px]">
                     <Image
                       src={image}
                       alt={`Property Image ${index + 1}`}
@@ -89,9 +108,63 @@ function CardHouse({dataImage, className} : dataproperty) {
         </div>
       </CardContent>
       <CardFooter className="px-4 py-3 bg-gray-50">
-        <Button variant="outline" size="sm" className="w-full">
-          View Details
-        </Button>
+        <Accordion type="single" collapsible className="w-full">
+          <AccordionItem value="item-1">
+            <AccordionTrigger className="flex justify-center">
+              View Details
+            </AccordionTrigger>
+            <AccordionContent className="text-center">
+              {dataImage.commentary}
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+        {time === "longterme" ? (
+          <AlertDialog>
+            <AlertDialogTrigger asChild>
+              <Button>Prendre cette maison</Button>
+            </AlertDialogTrigger>
+            <AlertDialogContent>
+              <AlertDialogHeader>
+                <AlertDialogTitle>
+                  Cette maison vous plait elle ?
+                </AlertDialogTitle>
+                <AlertDialogDescription>
+                  Contactez nous pour nous faire par de votre requête et nous
+                  procéderons a la suite des opérations a éffectuer
+                </AlertDialogDescription>
+              </AlertDialogHeader>
+              <AlertDialogFooter>
+                <AlertDialogCancel>Annuler</AlertDialogCancel>
+                <Link href={"/contact"}>
+                  <AlertDialogAction>Nous contacter</AlertDialogAction>
+                </Link>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
+        ) : (
+          <AlertDialog>
+            <AlertDialogTrigger asChild>
+              <Button>Louer cette maison</Button>
+            </AlertDialogTrigger>
+            <AlertDialogContent>
+              <AlertDialogHeader>
+                <AlertDialogTitle>
+                  Cette maison vous plait elle ?
+                </AlertDialogTitle>
+                <AlertDialogDescription>
+                  Contactez nous pour nous faire par de votre requête et nous
+                  procéderons a la suite des opérations a éffectuer
+                </AlertDialogDescription>
+              </AlertDialogHeader>
+              <AlertDialogFooter>
+                <AlertDialogCancel>Annuler</AlertDialogCancel>
+                <Link href={"/contact"}>
+                  <AlertDialogAction>Nous contacter</AlertDialogAction>
+                </Link>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
+        )}
       </CardFooter>
     </Card>
   );
