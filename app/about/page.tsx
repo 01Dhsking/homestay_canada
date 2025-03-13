@@ -43,13 +43,16 @@ function About() {
                 </p>
               </div>
               <div className="bg-gray-100 rounded-lg h-64 flex items-center justify-center">
-                <Image
+                {/* <Image
                   width={50}
                   height={50}
                   src="/api/placeholder/400/320"
                   alt="Our founding team"
                   className="rounded-lg shadow-md"
-                />
+                /> */}
+                <h1 className="text-lg sm:text-xl font-bold text-blue-600">
+                  HomeStay CA
+                </h1>
               </div>
             </div>
           </div>
@@ -148,7 +151,7 @@ function About() {
       </div>
 
       {/* Team Section */}
-      <div className="py-16 bg-white">
+      <div className="py-16 bg-white hidden">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-12 text-center">
             Rencontrez notre équipe
@@ -251,7 +254,6 @@ function About() {
         </div>
       </div>
       <Footer />
-
     </div>
   );
 }
