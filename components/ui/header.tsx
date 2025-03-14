@@ -5,6 +5,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
 import { Button } from "./button";
 import { Menu } from "lucide-react";
+import { Card, CardContent, CardFooter } from "./card";
 import {
   Sheet,
   SheetContent,
@@ -12,6 +13,14 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -55,8 +64,8 @@ function Header({ user }: HeaderProps) {
   const pathname = usePathname();
 
   React.useEffect(() => {
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('isLoggedIn', user ? 'true' : 'false');
+    if (typeof window !== "undefined") {
+      localStorage.setItem("isLoggedIn", user ? "true" : "false");
     }
   }, [user]);
 
@@ -155,7 +164,7 @@ function Header({ user }: HeaderProps) {
                         className="text-blue-600 flex gap-2 items-center  font-semibold text-[15px] py-2 pl-[7px] 
                       hover:cursor-pointer hover:scale-[1.02] transition-transform hover:opacity-80"
                       >
-                        <UserPen color="gray" size={20}/>
+                        <UserPen color="gray" size={20} />
                         <p>Voir le profile</p>
                       </div>
                     </DropdownMenuLabel>
@@ -270,6 +279,31 @@ function Header({ user }: HeaderProps) {
           </SheetContent>
         </Sheet>
       </div>
+      <CardFooter className="container mx-auto">
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/">Accueil</BreadcrumbLink>
+            </BreadcrumbItem>
+            {pathname !== "/" && (
+              <>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbPage>
+                    {pathname === "/type" && "Nos maisons"}
+                    {pathname === "/type/shortterme" && "court terme"}
+                    {pathname === "/type/longterme" && "long terme"}
+                    {pathname === "/about" && "À propos de nous"}
+                    {pathname === "/contact" && "Contact"}
+                    {pathname === "/login" && "Se connecter"}
+                    {pathname === "/profile" && "Profile"}
+                  </BreadcrumbPage>
+                </BreadcrumbItem>
+              </>
+            )}
+          </BreadcrumbList>
+        </Breadcrumb>
+      </CardFooter>
     </header>
   );
 }

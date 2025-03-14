@@ -71,7 +71,7 @@ export default function House() {
               </div>
             </CardContent>
             <CardFooter className="bg-gray-50 px-6">
-              <Link href={"/shortterme"}>
+              <Link href={"/type/shortterme"}>
                 <Button className="w-full bg-blue-600 hover:bg-blue-700">
                 Voir les options à court terme
                 </Button>
@@ -112,7 +112,7 @@ export default function House() {
               </div>
             </CardContent>
             <CardFooter className="bg-gray-50 px-6">
-              <Link href={"/longterme"}>
+              <Link href={"/type/longterme"}>
                 <Button className="w-full bg-blue-600 hover:bg-blue-700">
                 Voir les options à long terme
                 </Button>

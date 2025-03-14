@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { useForm, FieldValues } from "react-hook-form";
+import { useSearchParams } from 'next/navigation';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { toast } from "sonner";
@@ -24,7 +25,18 @@ import {
 import { redirect } from "next/navigation";
 
 function Contact() {
-  const form = useForm();
+  const searchParams = useSearchParams();
+  const form = useForm({
+    defaultValues: {
+      homeName: searchParams.get('property') || '',
+      nom: '',
+      email: '',
+      téléphone: '',
+      inquiry: '',
+      category: '',
+      message: ''
+    }
+  });
   const [sending, setSending] = React.useState(false);
   const [isLoggedIn, setisLoggedIn] = React.useState<boolean>(false);
 
@@ -150,7 +162,7 @@ function Contact() {
                             <FormLabel>le nom de la maison(optionel)</FormLabel>
                             <FormControl>
                               <Input
-                                type="homeName"
+                                type="text"
                                 placeholder="le nom de la maison"
                                 {...field}
                               />

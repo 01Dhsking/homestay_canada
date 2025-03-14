@@ -90,7 +90,9 @@ function CardHouse({ dataImage, className, time }: dataproperty) {
             {dataImage.available ? "disponible" : "plus disponible"}
           </Badge>
         </div>
-        <h3 className="font-bold">{dataImage.name} - {dataImage.id}</h3>
+        <h3 className="font-bold">
+          {dataImage.name} - {dataImage.id}
+        </h3>
         <p className="text-gray-500 text-sm mb-3">{dataImage.location}</p>
 
         <div className="flex justify-between text-sm text-gray-500 pt-2 border-t">
@@ -136,7 +138,11 @@ function CardHouse({ dataImage, className, time }: dataproperty) {
               </AlertDialogHeader>
               <AlertDialogFooter>
                 <AlertDialogCancel>Annuler</AlertDialogCancel>
-                <Link href={"/contact"}>
+                <Link
+                  href={`/contact?property=${encodeURIComponent(
+                    dataImage.name
+                  )}`}
+                >
                   <AlertDialogAction>Nous contacter</AlertDialogAction>
                 </Link>
               </AlertDialogFooter>
@@ -159,7 +165,11 @@ function CardHouse({ dataImage, className, time }: dataproperty) {
               </AlertDialogHeader>
               <AlertDialogFooter>
                 <AlertDialogCancel>Annuler</AlertDialogCancel>
-                <Link href={"/contact"}>
+                <Link
+                  href={`/contact?property=${encodeURIComponent(
+                    `${dataImage.name} - ${dataImage.id}`
+                  )}`}
+                >
                   <AlertDialogAction>Nous contacter</AlertDialogAction>
                 </Link>
               </AlertDialogFooter>
