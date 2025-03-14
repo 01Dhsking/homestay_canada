@@ -5,7 +5,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
 import { Button } from "./button";
 import { Menu } from "lucide-react";
-import { Card, CardContent, CardFooter } from "./card";
+import { CardFooter } from "./card";
 import {
   Sheet,
   SheetContent,
@@ -31,7 +31,6 @@ import {
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
@@ -40,11 +39,7 @@ import {
 import { usePathname } from "next/navigation";
 import { signOut } from "next-auth/react";
 import {
-  BadgeCheck,
-  Bell,
-  CreditCard,
   LogOut,
-  Sparkles,
   UserPen,
 } from "lucide-react";
 
