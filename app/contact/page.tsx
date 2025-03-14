@@ -29,7 +29,7 @@ function Contact() {
   const onSubmit = async (data: FieldValues) => {
     setSending(true);
     try {
-      const response = await fetch("/api/send", {
+      const response1 = await fetch("/api/send", {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
@@ -37,8 +37,14 @@ function Contact() {
         },
       });
 
-      if (response.ok) {
+      if (response1.ok) {
         form.reset();
+        await fetch("/api/PostPushOverNotification", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
         alert("Message envoyé avec succès!");
       } else {
         throw new Error("Erreur lors de l'envoi");
