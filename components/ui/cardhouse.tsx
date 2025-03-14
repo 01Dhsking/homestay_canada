@@ -32,6 +32,7 @@ import Link from "next/link";
 
 interface dataproperty {
   dataImage: {
+    id: string;
     images: (string | StaticImageData)[]; // Changed to array of images
     type: string;
     price: string;
@@ -89,7 +90,7 @@ function CardHouse({ dataImage, className, time }: dataproperty) {
             {dataImage.available ? "disponible" : "plus disponible"}
           </Badge>
         </div>
-        <h3 className="font-bold">{dataImage.name}</h3>
+        <h3 className="font-bold">{dataImage.name} - {dataImage.id}</h3>
         <p className="text-gray-500 text-sm mb-3">{dataImage.location}</p>
 
         <div className="flex justify-between text-sm text-gray-500 pt-2 border-t">

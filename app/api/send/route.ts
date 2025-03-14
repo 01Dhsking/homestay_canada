@@ -3,7 +3,7 @@ import { Resend } from 'resend';
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
-  const { nom, email, téléphone, inquiry, category, message } = await req.json();
+  const { nom, email, téléphone, inquiry, category, message, homeName } = await req.json();
   
   try {
     const data = await resend.emails.send({
@@ -17,6 +17,7 @@ export async function POST(req: Request) {
         <p><strong>Téléphone:</strong> ${téléphone}</p>
         <p><strong>Type de demande:</strong> ${inquiry}</p>
         <p><strong>Type de maison(optionel):</strong> ${category}</p>
+        <p><strong>le nom de la maison(optionel):</strong> ${homeName}</p>
         <p><strong>\n\nMessage:</strong></p>
         <p>${message}</p>
       `,

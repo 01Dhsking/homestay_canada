@@ -3,7 +3,7 @@ import React from "react";
 import { useForm, FieldValues } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { toast } from "sonner"
+import { toast } from "sonner";
 import {
   Form,
   FormControl,
@@ -45,7 +45,7 @@ function Contact() {
       }
     } catch (error) {
       toast.error("Erreur lors de l'envoi du message. Veuillez réessayer.");
-      console.error(error)
+      console.error(error);
     } finally {
       setSending(false);
     }
@@ -117,6 +117,23 @@ function Contact() {
                             <FormControl>
                               <Input
                                 placeholder="Votre numéro de téléphone"
+                                {...field}
+                              />
+                            </FormControl>
+                          </FormItem>
+                        )}
+                      />
+
+                      <FormField
+                        control={form.control}
+                        name="homeName"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>le nom de la maison(optionel)</FormLabel>
+                            <FormControl>
+                              <Input
+                                type="homeName"
+                                placeholder="le nom de la maison"
                                 {...field}
                               />
                             </FormControl>
