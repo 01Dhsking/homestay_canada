@@ -234,7 +234,7 @@ export default function ShotTerme() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             <div className="absolute bottom-0 left-0 p-4 text-white">
               <h3 className="font-bold">Toronto</h3>
-              <p className="text-sm">124 Propriétés</p>
+              {/* <p className="text-sm">124 Propriétés</p> */}
             </div>
           </div>
 
@@ -250,7 +250,7 @@ export default function ShotTerme() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             <div className="absolute bottom-0 left-0 p-4 text-white">
               <h3 className="font-bold">Vancouver</h3>
-              <p className="text-sm">98 Propriétés</p>
+              {/* <p className="text-sm">98 Propriétés</p> */}
             </div>
           </div>
 
@@ -266,7 +266,7 @@ export default function ShotTerme() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             <div className="absolute bottom-0 left-0 p-4 text-white">
               <h3 className="font-bold">Montreal</h3>
-              <p className="text-sm">87 Propriétés</p>
+              {/* <p className="text-sm">87 Propriétés</p> */}
             </div>
           </div>
 
@@ -282,7 +282,7 @@ export default function ShotTerme() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             <div className="absolute bottom-0 left-0 p-4 text-white">
               <h3 className="font-bold">Calgary</h3>
-              <p className="text-sm">65 Propriétés</p>
+              {/* <p className="text-sm">65 Propriétés</p> */}
             </div>
           </div>
         </div>
