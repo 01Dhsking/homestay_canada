@@ -4,6 +4,8 @@ import { useForm, FieldValues } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { toast } from "sonner";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
 import {
   Form,
   FormControl,
@@ -21,39 +23,46 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { redirect } from "next/navigation";
 
-function Contact() {
+async function Contact() {
   const form = useForm();
   const [sending, setSending] = React.useState(false);
+  const session = await getServerSession(authOptions);
 
   const onSubmit = async (data: FieldValues) => {
     setSending(true);
-    try {
-      const response1 = await fetch("/api/send", {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-
-      if (response1.ok) {
-        form.reset();
-        await fetch("/api/PostPushOverNotification", {
+    if (session?.user) {
+      try {
+        const response1 = await fetch("/api/send", {
           method: "POST",
+          body: JSON.stringify(data),
           headers: {
             "Content-Type": "application/json",
           },
         });
-        alert("Message envoyé avec succès!");
-      } else {
-        throw new Error("Erreur lors de l'envoi");
+
+        if (response1.ok) {
+          form.reset();
+          await fetch("/api/PostPushOverNotification", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
+          toast.success("Message envoyé avec succès!");
+        } else {
+          throw new Error("Erreur lors de l'envoi");
+        }
+      } catch (error) {
+        toast.error("Erreur lors de l'envoi du message. Veuillez réessayer.");
+        console.error(error);
+      } finally {
+        setSending(false);
       }
-    } catch (error) {
-      toast.error("Erreur lors de l'envoi du message. Veuillez réessayer.");
-      console.error(error);
-    } finally {
-      setSending(false);
+    } else {
+      toast.error("Vous avez pas un compte actif, veuillez vous connecter");
+      redirect("/register");
     }
   };
 
