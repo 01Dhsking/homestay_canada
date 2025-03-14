@@ -49,16 +49,22 @@ import m4_p2 from "@/public/image/house/m4_p2.jpg";
 import m4_p3 from "@/public/image/house/m4_p3.jpg";
 import m4_p4 from "@/public/image/house/m4_p4.jpg";
 import m4_p5 from "@/public/image/house/m4_p5.jpg";
+import m5_p1 from "@/public/image/house/m5_p1.jpg";
+import m5_p2 from "@/public/image/house/m5_p2.jpg";
+import m5_p3 from "@/public/image/house/m5_p3.jpg";
+import m5_p4 from "@/public/image/house/m5_p4.jpg";
+import m5_p5 from "@/public/image/house/m5_p5.jpg";
+import m5_p6 from "@/public/image/house/m5_p6.jpg";
 
 const houseInfo = [
   {
     id: "id_1",
     images: [m1_p1, m1_p2, m1_p3, m1_p4],
     type: "Populaire",
-    price: "$1300/night",
+    price: "$1300/mois",
     name: "Suite rénovée d'une chambre",
     available: true,
-    location: "Vancouver, Canada",
+    location: "Montreal, Canada",
     bed: 1,
     bath: 1,
     size: "500 sq.ft",
@@ -68,10 +74,10 @@ const houseInfo = [
     id: "id_2",
     images: [m2_p2, m2_p3, m2_p4, m2_p1, m2_p5, m2_p6],
     type: "Populaire",
-    price: "$1400/night",
+    price: "$1400/mois",
     name: "Suite rénovée d'une chambre",
     available: true,
-    location: "Vancouver, Canada",
+    location: "Montreal, Canada",
     bed: 1,
     bath: 1,
     size: "500 sq.ft",
@@ -81,7 +87,7 @@ const houseInfo = [
     id: "id_3",
     images: [m3_p1, m3_p2, m3_p3, m3_p4, m3_p5, m3_p6, m3_p7, m3_p8],
     type: "Populaire",
-    price: "$1850/night",
+    price: "$1850/mois",
     name: "rez-de-chaussée de deux chambres",
     available: true,
     location: "Montreal, Canada",
@@ -94,7 +100,7 @@ const houseInfo = [
     id: "id_4",
     images: [m4_p1, m4_p2, m4_p3, m4_p4, m4_p5],
     type: "Populaire",
-    price: "$1900/night",
+    price: "$1900/mois",
     name: "suite a deux chambre",
     available: true,
     location: "Montreal, Canada",
@@ -102,6 +108,19 @@ const houseInfo = [
     bath: 1,
     size: "650 sq.ft",
     commentary: "situé au 5eme étage",
+  },
+  {
+    id: "id_5",
+    images: [m5_p1, m5_p2, m5_p3, m5_p4, m5_p5, m5_p6],
+    type: "Populaire",
+    price: "$1500/mois",
+    name: "suite a deux chambre",
+    available: true,
+    location: "Montreal, Canada",
+    bed: 2,
+    bath: 1,
+    size: " sq.ft",
+    commentary: "Condo avec salon de bonne taille, Grand salon avec rangement dans l'unité. Nouvelle peinture en 2025. Loyer comprenant place de parking, chauffage et eau.",
   },
 ];
 
@@ -123,17 +142,17 @@ export default function Longterme() {
             </p>
 
             <div className="flex space-x-3 mb-6">
-              <Link href="/shortterme">
+              <Link href="/type/shortterme">
                 <Button variant="outline">Court terme</Button>
               </Link>
-              <Link href="/longterme">
+              <Link href="/type/longterme">
                 <Button variant={"outline"} className="bg-blue-600 text-white">
                   Long Term
                 </Button>
               </Link>
             </div>
 
-            <Card className="mt-6 sm:mt-8">
+            <Card className="mt-6 sm:mt-8 hidden">
               <CardContent className="p-4">
                 <div className="flex flex-col gap-3 sm:gap-4">
                   <div className="flex flex-col sm:flex-row gap-3">
@@ -271,7 +290,7 @@ export default function Longterme() {
 
       {/* Shortterme properties */}
       <section className="container mx-auto px-4 py-12">
-        <h2 className="text-2xl font-bold mb-8">Nos propriétés court terme</h2>
+        <h2 className="text-2xl font-bold mb-8">Nos propriétés long terme</h2>
 
         <div className="grid md:grid-cols-3 gap-6">
           {houseInfo.map((house, index) => {

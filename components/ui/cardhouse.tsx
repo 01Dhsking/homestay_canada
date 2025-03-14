@@ -86,8 +86,15 @@ function CardHouse({ dataImage, className, time }: dataproperty) {
       <CardContent className="p-4">
         <div className="flex justify-between items-center mb-2">
           <p className="font-bold text-blue-600">{dataImage.price}</p>
-          <Badge variant="outline" className="text-green-600 border-green-600">
-            {dataImage.available ? "disponible" : "plus disponible"}
+          <Badge
+            variant="outline"
+            className={`${
+              dataImage.available
+                ? "text-green-600 border-green-600"
+                : "text-red-600 border-red-600"
+            }`}
+          >
+            {dataImage.available ? "disponible" : "pas disponible"}
           </Badge>
         </div>
         <h3 className="font-bold">
@@ -121,7 +128,7 @@ function CardHouse({ dataImage, className, time }: dataproperty) {
             </AccordionContent>
           </AccordionItem>
         </Accordion>
-        {time === "longterme" ? (
+        {time === "longterme" && dataImage.available && (
           <AlertDialog>
             <AlertDialogTrigger asChild>
               <Button>Prendre cette maison</Button>
@@ -148,7 +155,8 @@ function CardHouse({ dataImage, className, time }: dataproperty) {
               </AlertDialogFooter>
             </AlertDialogContent>
           </AlertDialog>
-        ) : (
+        )}
+        {time === "shortterme" && dataImage.available && (
           <AlertDialog>
             <AlertDialogTrigger asChild>
               <Button>Louer cette maison</Button>
