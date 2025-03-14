@@ -164,11 +164,11 @@ function CardHouse({ dataImage, className, time }: dataproperty) {
             <AlertDialogContent>
               <AlertDialogHeader>
                 <AlertDialogTitle>
-                  Cette maison vous plait elle ?
+                  Cette maison vous plaît-elle ?
                 </AlertDialogTitle>
                 <AlertDialogDescription>
-                  Contactez nous pour nous faire par de votre requête et nous
-                  procéderons a la suite des opérations a éffectuer
+                  Contactez-nous pour nous faire part de votre requête et nous
+                  procéderons à la suite des opérations à effectuer
                 </AlertDialogDescription>
               </AlertDialogHeader>
               <AlertDialogFooter>
