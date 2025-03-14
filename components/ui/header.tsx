@@ -58,7 +58,44 @@ interface HeaderProps {
     | undefined;
 }
 
-const isMobile = false;
+function UserMenu({ user }: { user: HeaderProps["user"] }) {
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <div className="flex flex-row items-center space-x-2 py-2 px-5 border border-gray-300 rounded-2xl">
+          <Avatar>
+            <AvatarImage src={user?.image || ""} />
+            <AvatarFallback>{user?.name?.[0] || "U"}</AvatarFallback>
+          </Avatar>
+          <p>{user?.name || "Profile"}</p>
+        </div>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent
+        className="w-[--radix-dropdown-menu-trigger-width] min-w-56 rounded-lg"
+        side="bottom"
+        align="end"
+        sideOffset={4}
+      >
+        <Link href="/profile">
+          <DropdownMenuLabel className="p-0 font-normal">
+            <div className="text-blue-600 flex gap-2 items-center font-semibold text-[15px] py-2 pl-[7px] hover:cursor-pointer hover:scale-[1.02] transition-transform hover:opacity-80">
+              <UserPen color="gray" size={20} />
+              <p>Voir le profile</p>
+            </div>
+          </DropdownMenuLabel>
+        </Link>
+        <DropdownMenuSeparator />
+
+        <DropdownMenuItem onClick={() => signOut()}>
+          <div className="text-red-500 flex gap-2 items-center justify-center font-semibold text-[15px] hover:cursor-pointer hover:scale-[1.02] transition-transform hover:opacity-80">
+            <LogOut />
+            Se déconnecter
+          </div>
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+}
 
 function Header({ user }: HeaderProps) {
   const pathname = usePathname();
@@ -142,69 +179,7 @@ function Header({ user }: HeaderProps) {
         <div className="hidden md:flex space-x-3">
           {user ? (
             <div className="flex space-x-3">
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <div className="flex flex-row items-center space-x-2 py-2 px-5 border border-gray-300 rounded-2xl">
-                    <Avatar>
-                      <AvatarImage src={user.image || ""} />
-                      <AvatarFallback>{user.name?.[0] || "U"}</AvatarFallback>
-                    </Avatar>
-                    <p>{user.name || "Profile"}</p>
-                  </div>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent
-                  className="w-[--radix-dropdown-menu-trigger-width] min-w-56 rounded-lg"
-                  side={isMobile ? "bottom" : "bottom"}
-                  align="end"
-                  sideOffset={4}
-                >
-                  <Link href="/profile">
-                    <DropdownMenuLabel className="p-0 font-normal">
-                      <div
-                        className="text-blue-600 flex gap-2 items-center  font-semibold text-[15px] py-2 pl-[7px] 
-                      hover:cursor-pointer hover:scale-[1.02] transition-transform hover:opacity-80"
-                      >
-                        <UserPen color="gray" size={20} />
-                        <p>Voir le profile</p>
-                      </div>
-                    </DropdownMenuLabel>
-                  </Link>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuGroup>
-                    <DropdownMenuItem>
-                      <Sparkles />
-                      Upgrade to Pro
-                    </DropdownMenuItem>
-                  </DropdownMenuGroup>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuGroup>
-                    <DropdownMenuItem>
-                      <BadgeCheck />
-                      Account
-                    </DropdownMenuItem>
-                    <DropdownMenuItem>
-                      <CreditCard />
-                      Billing
-                    </DropdownMenuItem>
-                    <DropdownMenuItem>
-                      <Bell />
-                      Notifications
-                    </DropdownMenuItem>
-                  </DropdownMenuGroup>
-                  <DropdownMenuSeparator />
-
-                  <DropdownMenuItem>
-                    <div
-                      className="text-red-500 flex gap-2 items-center justify-center font-semibold text-[15px] hover:cursor-pointer 
-                      hover:scale-[1.02] transition-transform hover:opacity-80"
-                      onClick={() => signOut()}
-                    >
-                      <LogOut />
-                      Se déconnecter
-                    </div>
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
+              <UserMenu user={user} />
             </div>
           ) : (
             <Link href="/login">
@@ -226,7 +201,7 @@ function Header({ user }: HeaderProps) {
             <SheetHeader>
               <SheetTitle>Menu</SheetTitle>
             </SheetHeader>
-            <div className="flex flex-col space-y-4 mt-6 text-center">
+            <div className="flex flex-col space-y-4 mt-6">
               <Link
                 href="/"
                 className={`${
@@ -268,12 +243,15 @@ function Header({ user }: HeaderProps) {
                 Contact
               </Link>
               <div className="flex flex-col space-y-2 pt-4 border-t">
-                <Button variant="outline" size="sm" className="w-full">
-                  Se connecter
-                </Button>
-                <Button size="sm" className="w-full">
-                  Essayez Premium
-                </Button>
+                {user ? (
+                  <UserMenu user={user} />
+                ) : (
+                  <Link href="/login">
+                    <Button variant="outline" size="sm" className="w-full">
+                      Se connecter
+                    </Button>
+                  </Link>
+                )}
               </div>
             </div>
           </SheetContent>
