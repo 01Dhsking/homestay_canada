@@ -54,6 +54,12 @@ const isMobile = false;
 function Header({ user }: HeaderProps) {
   const pathname = usePathname();
 
+  React.useEffect(() => {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('isLoggedIn', user ? 'true' : 'false');
+    }
+  }, [user]);
+
   return (
     <header className="border-b">
       <div className="container mx-auto py-3 sm:py-4 px-4 flex items-center justify-between">

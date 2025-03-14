@@ -4,8 +4,6 @@ import { useForm, FieldValues } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { toast } from "sonner";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/lib/auth";
 import {
   Form,
   FormControl,
@@ -25,14 +23,19 @@ import {
 } from "@/components/ui/select";
 import { redirect } from "next/navigation";
 
-async function Contact() {
+function Contact() {
   const form = useForm();
   const [sending, setSending] = React.useState(false);
-  const session = await getServerSession(authOptions);
+  const [isLoggedIn, setisLoggedIn] = React.useState<boolean>(false);
+
+  React.useEffect(() => {
+    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+    setisLoggedIn(isLoggedIn);
+  }, []);
 
   const onSubmit = async (data: FieldValues) => {
     setSending(true);
-    if (session?.user) {
+    if (isLoggedIn) {
       try {
         const response1 = await fetch("/api/send", {
           method: "POST",
