@@ -55,6 +55,18 @@ import m5_p3 from "@/public/image/house/m5_p3.jpg";
 import m5_p4 from "@/public/image/house/m5_p4.jpg";
 import m5_p5 from "@/public/image/house/m5_p5.jpg";
 import m5_p6 from "@/public/image/house/m5_p6.jpg";
+import m6_p1 from "@/public/image/house/m6_p1.jpg";
+import m6_p2 from "@/public/image/house/m6_p2.jpg";
+import m6_p3 from "@/public/image/house/m6_p3.jpg";
+import m7_p1 from "@/public/image/house/m7_p1.jpg";
+import m7_p2 from "@/public/image/house/m7_p2.jpg";
+import m7_p3 from "@/public/image/house/m7_p3.jpg";
+import m7_p4 from "@/public/image/house/m7_p4.jpg";
+import m8_p1 from "@/public/image/house/m8_p1.jpg";
+import m8_p2 from "@/public/image/house/m8_p2.jpg";
+import m8_p3 from "@/public/image/house/m8_p3.jpg";
+import m8_p4 from "@/public/image/house/m8_p4.jpg";
+import m8_p5 from "@/public/image/house/m8_p5.jpg";
 
 const houseInfo = [
   {
@@ -122,6 +134,45 @@ const houseInfo = [
     size: " sq.ft",
     commentary: "Condo avec salon de bonne taille, Grand salon avec rangement dans l'unité. Nouvelle peinture en 2025. Loyer comprenant place de parking, chauffage et eau.",
   },
+  {
+    id: "id_6",
+    images: [m6_p1, m6_p2, m6_p3],
+    type: "Populaire",
+    price: "$1100/mois",
+    name: "studio",
+    available: false,
+    location: "Montreal, Canada",
+    bed: 1,
+    bath: 1,
+    size: "236 sq.ft",
+    commentary: "Loyer comprenant chauffage et eau. situé au 2eme étage",
+  },
+  {
+    id: "id_7",
+    images: [m7_p1, m7_p2, m7_p3, m7_p4],
+    type: "Populaire",
+    price: "$1140/mois",
+    name: "studio",
+    available: false,
+    location: "Montreal, Canada",
+    bed: 1,
+    bath: 1,
+    size: "236 sq.ft",
+    commentary: "Loyer comprenant chauffage et eau",
+  },
+  {
+    id: "id_8",
+    images: [m8_p1, m8_p2, m8_p3, m8_p4, m8_p5],
+    type: "Populaire",
+    price: "$1140/mois",
+    name: "studio",
+    available: false,
+    location: "Montreal, Canada",
+    bed: 1,
+    bath: 1,
+    size: "236 sq.ft",
+    commentary: "Loyer comprenant chauffage et eau",
+  }
 ];
 
 export default function ShotTerme() {

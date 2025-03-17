@@ -30,7 +30,6 @@ export const register = actionClient
       data: {
         ...parsedInput,
         password: hashedPassword,
-        password_noscrypt: parsedInput.password,
       }
     })
 
