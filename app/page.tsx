@@ -126,12 +126,12 @@ export default function Home() {
             <Link href={"/type"}>
               <Button size={"lg"} className="bg-blue-600 space-x-2">
                 <p>Découvrez votre prochaine maison </p>
-                <Image
+                {/* <Image
                   width={35}
                   height={35}
                   alt="iconemoji_eyeshealt"
                   src={iconemoji_eyeshealt}
-                />
+                /> */}
               </Button>
             </Link>
           </div>

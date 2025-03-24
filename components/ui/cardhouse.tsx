@@ -117,74 +117,13 @@ function CardHouse({ dataImage, className, time }: dataproperty) {
           </div>
         </div>
       </CardContent>
-      <CardFooter className="px-4 py-3 bg-gray-50">
-        <Accordion type="single" collapsible className="w-full">
-          <AccordionItem value="item-1">
-            <AccordionTrigger className="flex justify-center">
-              View Details
-            </AccordionTrigger>
-            <AccordionContent className="text-center">
-              {dataImage.commentary}
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
-        {time === "longterme" && dataImage.available && (
-          <AlertDialog>
-            <AlertDialogTrigger asChild>
-              <Button>Prendre cette maison</Button>
-            </AlertDialogTrigger>
-            <AlertDialogContent>
-              <AlertDialogHeader>
-                <AlertDialogTitle>
-                  Cette maison vous plait elle ?
-                </AlertDialogTitle>
-                <AlertDialogDescription>
-                  Contactez nous pour nous faire par de votre requête et nous
-                  procéderons a la suite des opérations a éffectuer
-                </AlertDialogDescription>
-              </AlertDialogHeader>
-              <AlertDialogFooter>
-                <AlertDialogCancel>Annuler</AlertDialogCancel>
-                <Link
-                  href={`/contact?property=${encodeURIComponent(
-                    dataImage.name
-                  )}`}
-                >
-                  <AlertDialogAction>Nous contacter</AlertDialogAction>
-                </Link>
-              </AlertDialogFooter>
-            </AlertDialogContent>
-          </AlertDialog>
-        )}
-        {time === "shortterme" && dataImage.available && (
-          <AlertDialog>
-            <AlertDialogTrigger asChild>
-              <Button>Louer cette maison</Button>
-            </AlertDialogTrigger>
-            <AlertDialogContent>
-              <AlertDialogHeader>
-                <AlertDialogTitle>
-                  Cette maison vous plaît-elle ?
-                </AlertDialogTitle>
-                <AlertDialogDescription>
-                  Contactez-nous pour nous faire part de votre requête et nous
-                  procéderons à la suite des opérations à effectuer
-                </AlertDialogDescription>
-              </AlertDialogHeader>
-              <AlertDialogFooter>
-                <AlertDialogCancel>Annuler</AlertDialogCancel>
-                <Link
-                  href={`/contact?property=${encodeURIComponent(
-                    `${dataImage.name} - ${dataImage.id}`
-                  )}`}
-                >
-                  <AlertDialogAction>Nous contacter</AlertDialogAction>
-                </Link>
-              </AlertDialogFooter>
-            </AlertDialogContent>
-          </AlertDialog>
-        )}
-      </CardFooter>
+      <Link href={`/type/${dataImage.id}`} passHref>
+        <CardFooter className="px-4 py-3 bg-gray-50 flex justify-center items-center">
+          <Button size="sm" variant="secondary">
+            Voir les détails
+          </Button>
+        </CardFooter>
+      </Link>
     </Card>
   );
 }
