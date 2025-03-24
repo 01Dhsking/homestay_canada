@@ -164,12 +164,14 @@ const houseInfo = [
   },
 ];
 
-type Props = {
-  params: { id: string };
-};
+interface Props {
+  params: Promise<{ id: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}
 
-export default function PropertyPage({ params }: Props) {
-  const property = houseInfo.find((house) => house.id === params.id);
+export default async function PropertyPage({ params }: Props) {
+  const { id } = await params;
+  const property = houseInfo.find((house) => house.id === id);
 
   if (!property) {
     return <div>Propriété non trouvée</div>;

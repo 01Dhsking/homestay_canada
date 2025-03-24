@@ -12,7 +12,6 @@ import {
 } from "lucide-react";
 import CardHouse from "@/components/ui/cardhouse";
 import photo15 from "@/public/image/photo15.png";
-import iconemoji_eyeshealt from "@/public/icon/emoji_eyeshealt.svg";
 import Footer from "@/components/ui/footer";
 
 import m1_p1 from "@/public/image/house/m1_p1.jpg";

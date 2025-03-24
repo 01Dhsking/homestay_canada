@@ -5,23 +5,6 @@ import Image, { StaticImageData } from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Bed, Bath, Maximize } from "lucide-react";
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
-import {
   Carousel,
   CarouselContent,
   CarouselItem,
@@ -36,7 +19,7 @@ interface dataproperty {
     images: (string | StaticImageData)[]; // Changed to array of images
     type: string;
     price: string;
-    name: string;
+     name: string;
     available: boolean;
     location: string;
     bed: number;
@@ -48,7 +31,7 @@ interface dataproperty {
   time: string;
 }
 
-function CardHouse({ dataImage, className, time }: dataproperty) {
+function CardHouse({ dataImage, className }: dataproperty) {
   return (
     <Card className={`${className} overflow-hidden`}>
       <div className="relative lg:h-[300px] h-[200px]">
