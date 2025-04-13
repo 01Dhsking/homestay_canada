@@ -53,6 +53,39 @@ import m8_p2 from "@/public/image/house/m8_p2.jpg";
 import m8_p3 from "@/public/image/house/m8_p3.jpg";
 import m8_p4 from "@/public/image/house/m8_p4.jpg";
 import m8_p5 from "@/public/image/house/m8_p5.jpg";
+import m9_p1 from "@/public/image/house/m9_p1.jpg";
+import m9_p2 from "@/public/image/house/m9_p2.jpg";
+import m9_p3 from "@/public/image/house/m9_p3.jpg";
+import m9_p4 from "@/public/image/house/m9_p4.jpg";
+import m9_p5 from "@/public/image/house/m9_p5.jpg";
+import m9_p6 from "@/public/image/house/m9_p6.jpg";
+import m9_p7 from "@/public/image/house/m9_p7.jpg";
+import m9_p8 from "@/public/image/house/m9_p8.jpg";
+import m10_p1 from "@/public/image/house/m10_p1.jpg";
+import m10_p2 from "@/public/image/house/m10_p2.jpg";
+import m10_p3 from "@/public/image/house/m10_p3.jpg";
+import m10_p4 from "@/public/image/house/m10_p4.jpg";
+import m11_p1 from "@/public/image/house/m11_p1.jpg";
+import m11_p2 from "@/public/image/house/m11_p2.jpg";
+import m11_p3 from "@/public/image/house/m11_p3.jpg";
+import m11_p4 from "@/public/image/house/m11_p4.jpg";
+import m11_p5 from "@/public/image/house/m11_p5.jpg";
+import m11_p6 from "@/public/image/house/m11_p6.jpg";
+import m12_p1 from "@/public/image/house/m12_p1.jpg";
+import m12_p2 from "@/public/image/house/m12_p2.jpg";
+import m12_p3 from "@/public/image/house/m12_p3.jpg";
+import m12_p4 from "@/public/image/house/m12_p4.jpg";
+import m12_p5 from "@/public/image/house/m12_p5.jpg";
+import m12_p6 from "@/public/image/house/m12_p6.jpg";
+import m12_p7 from "@/public/image/house/m12_p7.jpg";
+import m12_p8 from "@/public/image/house/m12_p8.jpg";
+import m12_p9 from "@/public/image/house/m12_p9.jpg";
+import m12_p10 from "@/public/image/house/m12_p10.jpg";
+import m13_p1 from "@/public/image/house/m13_p1.jpg";
+import m13_p2 from "@/public/image/house/m13_p2.jpg";
+import m13_p3 from "@/public/image/house/m13_p3.jpg";
+import m13_p4 from "@/public/image/house/m13_p4.jpg";
+import m13_p5 from "@/public/image/house/m13_p5.jpg";
 
 const houseInfo = [
   {
@@ -161,6 +194,85 @@ const houseInfo = [
     bath: 1,
     size: "236 sq.ft",
     commentary: "Loyer comprenant chauffage et eau",
+  },
+  {
+    id: "id_9",
+    images: [m9_p1, m9_p2, m9_p3, m9_p4, m9_p5, m9_p6, m9_p7, m9_p8],
+    type: "Populaire",
+    price: "$990$/mois",
+    name: "suite rénovée",
+    available: true,
+    location: "Montreal, Canada",
+    bed: 2,
+    bath: 2,
+    size: "",
+    commentary:
+      "Proche de la station jean talon ( 8 minutes de marches ) Épicerie et commerce à côté Hydro , chauffage compris . Possible d'ajouter le wifi",
+  },
+  {
+    id: "id_10",
+    images: [m10_p1, m10_p2, m10_p3, m10_p4],
+    type: "Populaire",
+    price: "$900/mois",
+    name: "studio",
+    available: true,
+    location: "Montreal, Canada",
+    bed: 1,
+    bath: 1,
+    size: "500 sq.ft",
+    commentary:
+      "suite rénovée studio proche de la station jean talon, située au 1er étage",
+  },
+  {
+    id: "id_11",
+    images: [m11_p1, m11_p2, m11_p3, m11_p4, m11_p5, m11_p6],
+    type: "Populaire",
+    price: "$1070/mois",
+    name: "suite rénovée",
+    available: true,
+    location: "Montreal, Canada",
+    bed: 1,
+    bath: 1,
+    size: "",
+    commentary: "Loyer comprenant chauffage et eau, située au 2e étage",
+  },
+  {
+    id: "id_12",
+    images: [
+      m12_p1,
+      m12_p2,
+      m12_p3,
+      m12_p4,
+      m12_p5,
+      m12_p6,
+      m12_p7,
+      m12_p8,
+      m12_p9,
+      m12_p10,
+    ],
+    type: "Populaire",
+    price: "$1100/mois",
+    name: "Apartment",
+    available: true,
+    location: "Montreal, Canada",
+    bed: 1,
+    bath: 1,
+    size: "",
+    commentary: "Loyer comprenant chauffage et eau",
+  },
+  {
+    id: "id_13",
+    images: [m13_p1, m13_p2, m13_p3, m13_p4, m13_p5],
+    type: "Populaire",
+    price: "$1030/mois",
+    name: "Studio non meublé",
+    available: true,
+    location: "Montreal, Canada",
+    bed: 1,
+    bath: 1,
+    size: "",
+    commentary:
+      "Proche de la station Cadillac (6 minutes de marches), Épicerie et commerce à côté, Loyer comprenant chauffage et eau, Possible d’ajouter le wifi",
   },
 ];
 
