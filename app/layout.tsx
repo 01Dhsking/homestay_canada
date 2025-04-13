@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/ui/header";
-import { Toaster } from "@/components/ui/sonner"
-import { getServerSession } from "next-auth"
-import { authOptions } from "@/lib/auth"
-import { Providers } from "@/components/providers"
+import { Toaster } from "@/components/ui/sonner";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
+import { Providers } from "@/components/providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "HomeStay CA",
+  title: "CA_Housing",
   description: "découvrez la maison de vos rêves",
 };
 

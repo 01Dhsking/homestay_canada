@@ -38,10 +38,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { usePathname } from "next/navigation";
 import { signOut } from "next-auth/react";
-import {
-  LogOut,
-  UserPen,
-} from "lucide-react";
+import { LogOut, UserPen } from "lucide-react";
 
 interface HeaderProps {
   user?:
@@ -107,7 +104,7 @@ function Header({ user }: HeaderProps) {
         <div className="flex items-center">
           <Link href="/">
             <h1 className="text-lg sm:text-xl font-bold text-blue-600">
-              HomeStay CA
+              CA_Housing
             </h1>
           </Link>
         </div>

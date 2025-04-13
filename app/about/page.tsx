@@ -50,7 +50,7 @@ function About() {
                   className="rounded-lg shadow-md"
                 /> */}
                 <h1 className="text-lg sm:text-xl font-bold text-blue-600">
-                  HomeStay CA
+                  CA_Housing
                 </h1>
               </div>
             </div>
